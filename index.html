@@ -1,6 +1,7 @@
+<html>
 <head>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.3.3/d3.min.js"></script>
-<style>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.3.3/d3.min.js"></script>
+<style type="text/css">
 
     * {
       margin: 0;
@@ -63,10 +64,11 @@
   top: -20px;
 }
 </style>
+</head>
 <body>
-Hello World123!
-
- <script>
+  <div class = "svg"></div>
+<div id = "tag"></div>
+<script>
   var w = 800;
   var h = 400;
 
@@ -251,7 +253,7 @@ var bigRects = svg.append("g")
                   }
               }
              })
-   
+
 
          var rectText = rectangles.append("text")
                .text(function(d){
@@ -274,15 +276,15 @@ rectText.on('mouseover', function(e) {
                var tag = "";
 
          if (d3.select(this).data()[0].details != undefined){
-          tag = "Task: " + d3.select(this).data()[0].task + "<br/>" + 
-                "Type: " + d3.select(this).data()[0].type + "<br/>" + 
-                "Starts: " + d3.select(this).data()[0].startTime + "<br/>" + 
-                "Ends: " + d3.select(this).data()[0].endTime + "<br/>" + 
+          tag = "Task: " + d3.select(this).data()[0].task + "<br/>" +
+                "Type: " + d3.select(this).data()[0].type + "<br/>" +
+                "Starts: " + d3.select(this).data()[0].startTime + "<br/>" +
+                "Ends: " + d3.select(this).data()[0].endTime + "<br/>" +
                 "Details: " + d3.select(this).data()[0].details;
          } else {
-          tag = "Task: " + d3.select(this).data()[0].task + "<br/>" + 
-                "Type: " + d3.select(this).data()[0].type + "<br/>" + 
-                "Starts: " + d3.select(this).data()[0].startTime + "<br/>" + 
+          tag = "Task: " + d3.select(this).data()[0].task + "<br/>" +
+                "Type: " + d3.select(this).data()[0].type + "<br/>" +
+                "Starts: " + d3.select(this).data()[0].startTime + "<br/>" +
                 "Ends: " + d3.select(this).data()[0].endTime;
          }
          var output = document.getElementById("tag");
@@ -305,15 +307,15 @@ innerRects.on('mouseover', function(e) {
          var tag = "";
 
          if (d3.select(this).data()[0].details != undefined){
-          tag = "Task: " + d3.select(this).data()[0].task + "<br/>" + 
-                "Type: " + d3.select(this).data()[0].type + "<br/>" + 
-                "Starts: " + d3.select(this).data()[0].startTime + "<br/>" + 
-                "Ends: " + d3.select(this).data()[0].endTime + "<br/>" + 
+          tag = "Task: " + d3.select(this).data()[0].task + "<br/>" +
+                "Type: " + d3.select(this).data()[0].type + "<br/>" +
+                "Starts: " + d3.select(this).data()[0].startTime + "<br/>" +
+                "Ends: " + d3.select(this).data()[0].endTime + "<br/>" +
                 "Details: " + d3.select(this).data()[0].details;
          } else {
-          tag = "Task: " + d3.select(this).data()[0].task + "<br/>" + 
-                "Type: " + d3.select(this).data()[0].type + "<br/>" + 
-                "Starts: " + d3.select(this).data()[0].startTime + "<br/>" + 
+          tag = "Task: " + d3.select(this).data()[0].task + "<br/>" +
+                "Type: " + d3.select(this).data()[0].type + "<br/>" +
+                "Starts: " + d3.select(this).data()[0].startTime + "<br/>" +
                 "Ends: " + d3.select(this).data()[0].endTime;
          }
          var output = document.getElementById("tag");
@@ -349,7 +351,7 @@ var grid = svg.append('g')
     .attr('class', 'grid')
     .attr('transform', 'translate(' +theSidePad + ', ' + (h - 50) + ')')
     .call(xAxis)
-    .selectAll("text")  
+    .selectAll("text")
             .style("text-anchor", "middle")
             .attr("fill", "#000")
             .attr("stroke", "none")
@@ -423,6 +425,6 @@ function getCounts(arr) {
 function getCount(word, arr) {
     return getCounts(arr)[word] || 0;
 }
- </script>
+</script>
 </body>
-</head>
+</html>

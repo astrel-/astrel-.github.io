@@ -1,5 +1,5 @@
 /* HTML5-specific CSS setup */
-article,aside,figure,footer,header,hgroup,nav,section{display:block}
+article,aside,figure,footer,header,hgroup,nav,section,games{display:block}
 
 html{background:white;color:black}
 body{font:normal medium 'Gill Sans','Gill Sans MT','Goudy Bookletter 1911','Linux Libertine O','Liberation Serif',Candara,serif;padding:0;margin:0 auto;width:40em;line-height:1.75;word-spacing:0.1em}
@@ -36,3 +36,4 @@ img.me{display:block;float:right;border:1px solid black;margin-left:1.75em}
 .phonebook article p,.phonebook article address{margin:0 0 0 120px}
 .review article p{margin:1.75em 0}
 .sectionSign:before{content:'\00A7'}
+games header{background:white;color:black;margin:0;padding:0}

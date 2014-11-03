@@ -1,0 +1,25 @@
+header {
+	text-align:center
+}
+nav ul {
+	margin:0;
+	padding:0 1em 0 0;
+	text-align:center
+}
+nav li {
+	display:inline;
+	padding-left:1em
+}
+#login {
+	text-align:right
+}
+#games
+{
+	color:red
+}
+#menu {
+	text-align:center
+}
+footer {
+	text-align:center
+}

@@ -1,25 +1,39 @@
+body {
+}
 header {
-	text-align:center
+	text-align: center;
 }
 nav ul {
-	margin:0;
-	padding:0 1em 0 0;
-	text-align:center
+	margin: 0;
+	padding: 0 1em 0 0;
+	text-align: center;
 }
 nav li {
-	display:inline;
-	padding-left:1em
+	display: inline;
+	padding-left: 1em;
 }
 #login {
-	text-align:right
+	text-align: right;
 }
-#games
+aside
 {
-	color:red
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:100px;
+    float:left;
+    padding:5px;
 }
-#menu {
-	text-align:center
+aside ul
+{
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+section
+{
+	text-align: center;
 }
 footer {
-	text-align:center
+	text-align: center;
 }

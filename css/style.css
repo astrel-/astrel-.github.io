@@ -12,16 +12,27 @@ header hgroup h2 {
 }
 nav ul {
 	margin: 0;
-	padding-bottom: 5px;
+	padding-bottom: 0px;
 	padding-left: 0px;
 }
 nav ul li {
-	display: inline;
+	display: inline-block;
+	width: 200px;
 	text-align: center; 
-	padding:10px;
+	padding:0px;
 	font-size: 130%;
 }
-
+#nav_el {
+	margin-right: 0px;
+}
+nav ul li a {
+	padding: 10px;
+	display: block;
+	color: yellow;
+}
+#nav_el {
+	text-align: center;
+}
 nav ul li:hover {
 	background-color: white;
 }
@@ -66,19 +77,6 @@ a.game_button {
 	cursor:pointer;
 	text-decoration:none;
 }
-/*GAME BUTTON
-a.game_button:link {
-    background-color: #B2FF99;
-}
-a.game_button:visited {
-
-}
-a.game_button:hover {
-	color: #FF00FF;
-}
-a.game_button:active {
-
-}*/
 aside span {
 	padding-left: 5px;
 }

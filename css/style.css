@@ -1,7 +1,7 @@
 body {
-	padding: 0px;
 }
 header {
+	margin-top:0px;
 	background-color: gray;
 	text-align: center;
 }
@@ -30,7 +30,7 @@ aside
 {
     line-height:30px;
     background-color:#eeeeee;
-    height: 200%;
+    height: 400px;
     width:20%;
     float:left;
     padding:5px;
@@ -38,8 +38,33 @@ aside
 aside ul
 {
 	margin: 0;
-	padding: 0;
+	padding: 5px;
 	text-align: left;
+}
+aside ul li:hover {
+	background-color:yellow;
+}
+li.game{
+	padding:0px;
+}
+a.game_button {
+	display:block;
+}
+/*GAME BUTTON
+a.game_button:link {
+    background-color: #B2FF99;
+}
+a.game_button:visited {
+
+}
+a.game_button:hover {
+	color: #FF00FF;
+}
+a.game_button:active {
+
+}*/
+aside span {
+	padding-left: 5px;
 }
 section {
 }
@@ -47,7 +72,11 @@ section h1 {
 	text-align: center;
 }
 section p {
+	padding-left: 5px;
 	color: blue;
+}
+ul {
+	list-style-type:none;
 }
 footer {
 	background-color: #000000;

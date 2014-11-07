@@ -19,18 +19,19 @@ nav li {
 	float:right;
 }
 #container1{
-
+	width: 100%;
 }
 #main{
 	float: left;
 	width: 80%;
+	height: 100%;
 }
 aside
 {
     line-height:30px;
     background-color:#eeeeee;
-    height: 400px;
-    width:200px;
+    height: 200%;
+    width:20%;
     float:left;
     padding:5px;
 }

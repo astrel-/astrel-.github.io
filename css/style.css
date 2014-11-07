@@ -50,6 +50,7 @@ li.game{
 a.game_button {
 	display:block;
 	cursor:pointer;
+	text-decoration:none;
 }
 /*GAME BUTTON
 a.game_button:link {

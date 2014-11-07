@@ -49,6 +49,7 @@ li.game{
 }
 a.game_button {
 	display:block;
+	cursor:pointer;
 }
 /*GAME BUTTON
 a.game_button:link {

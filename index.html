@@ -32,13 +32,13 @@
   <nav>
     <ul>
       <li>
-          <a href=""><div id="nav_el">Главная</div></a>
+          <a onclick="myFunction(0)"><div id="nav_el"><span>Главная</span></div></a>
         </li>
         <li>
-          <a href=""><div id="nav_el"><span>Как это работает</span></div></a>
+          <a onclick="myFunction(1)"><div id="nav_el"><span>Как это работает</span></div></a>
         </li>
         <li>
-          <a href=""><div id="nav_el"><span>Поддержка</span></div></a>
+          <a onclick="myFunction(2)"><div id="nav_el"><span>Поддержка</span></div></a>
         </li>
     </ul>
   </nav>
@@ -79,16 +79,18 @@
 
 
   <div id="main">
-  <section> 
+  <section class="main" id="Main"> 
 
-    <h1 id="demo">Главная</h1>
+    <h1>Добро пожаловать!</h1>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
   </section>
-  <section> 
+  <section class="main" id="How"  hidden> 
     <h1>Как это работает</h1>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <p>
+
+        SHAKIRA SHAKIRALorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
   </section>
-  <section> 
+  <section class="main" id="Support"  hidden> 
   <h1>Поддержка</h1>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 </section>

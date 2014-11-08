@@ -26,15 +26,18 @@ nav ul li {
 	margin-right: 0px;
 }
 nav ul li a {
+	cursor: pointer;
 	padding: 10px;
 	display: block;
 	color: yellow;
+	text-decoration: none;
 }
 #nav_el {
 	text-align: center;
 }
 nav ul li:hover {
 	background-color: white;
+	text-decoration: none;
 }
 #login {
 	padding-top: 5px;

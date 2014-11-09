@@ -1,12 +1,42 @@
 var ractive = new Ractive({
-						  counter: 0
-						  }
+						  el: 'main',
+						  template: '#template',
+						  data : {
+							title: 'hey',
+							text: 'oppa' }
 						  });
+/*
 
 document.getElementById( 'template' ).addEventListener( 'click', function () {
-													ractive.set( 'counter', ractive.get( 'counter' ) + 1 );
+													ractive.set( 'title', 'hello');
 													});
+*/
+/*
+document.getElementById( 'main_button' ).addEventListener( 'click', function () {
+													   alert('hello');
+													   });
+*/
+document.getElementById( 'main_button' ).addEventListener( 'click', hel);
+document.getElementById( 'how_button' ).addEventListener( 'click', hello);
+document.getElementById( 'support_button' ).addEventListener( 'click', hell);
 
+function hel () {
+	ractive.set( 'title', 'hello' );
+}
+
+function hell () {
+	ractive.set( 'title', 'sup' );
+}
+
+
+
+
+//document.getElementById( 'main_' ).addEventListener( 'click', hello);
+
+function hello () {
+	ractive.set( 'title', 'hey' );
+}
+/*
 function myFunction(s) {
 	var ractive = new Ractive({
 							  el: 'main',
@@ -17,4 +47,4 @@ function myFunction(s) {
 
 function myFunction1(s) {
 	ractive.set('title', 'Poka');
-}
+}*/

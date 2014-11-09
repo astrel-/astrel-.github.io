@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="shortcut icon" href="pic/favicon.ico">
   <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
-  <script src="js/script.js"></script>
 <style type="text/css"></style>
 </head>
 
@@ -33,13 +32,13 @@
   <nav>
     <ul>
       <li>
-          <a onclick="myFunction(0)"><div id="nav_el"><span>Главная</span></div></a>
+          <a id="main_button"><div id="nav_el"><span>Главная</span></div></a>
         </li>
         <li>
-          <a onclick="myFunction1(1)"><div id="nav_el"><span>Как это работает</span></div></a>
+          <a id='how_button'><div id="nav_el"><span>Как это работает</span></div></a>
         </li>
         <li>
-          <a onclick="myFunction(2)"><div id="nav_el"><span>Поддержка</span></div></a>
+          <a id='support_button'><div id="nav_el"><span>Поддержка</span></div></a>
         </li>
     </ul>
   </nav>
@@ -108,6 +107,8 @@
 <footer>
   Qiwi/Yandex/WebMoney/Visa
 </footer>
+
+<script src="js/script.js"></script>
 
 </body>
 

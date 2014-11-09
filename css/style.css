@@ -72,19 +72,6 @@ a.game_button {
 aside span {
 	padding-left: 5px;
 }
-section {
-}
-section h1 {
-	text-align: center;
-}
-section p {
-	text-indent: 20px;
-	padding-left: 5px;
-	color: blue;
-}
-ul {
-	list-style-type:none;
-}
 footer {
 	background-color: #000000;
 	color: #ffffff;

@@ -1,41 +1,27 @@
-body {
-	padding-top: 0px;
-}
 header {
-	padding-top:0px;
-	background-color: gray;
+	background-color: #222222;
 	text-align: center;
-	float:top;
 }
-header hgroup h2 {
-	text-align: center;
+header h2{
+	color: yellow;
 }
 nav ul {
-	margin: 0;
-	padding-bottom: 0px;
+	margin-bottom: 0;
 	padding-left: 0px;
 }
 nav ul li {
 	display: inline-block;
 	width: 200px;
 	text-align: center; 
-	padding:0px;
 	font-size: 130%;
-}
-#nav_el {
-	margin-right: 0px;
 }
 nav ul li a {
 	cursor: pointer;
-	padding: 10px;
+	padding-bottom: 10px;
+	padding-top: 10px;
 	display: block;
-	color: yellow;
-	text-decoration: none;
 }
-#nav_el {
-	text-align: center;
-}
-nav ul li:hover {
+nav ul li a:hover {
 	background-color: white;
 	text-decoration: none;
 }
@@ -44,16 +30,15 @@ nav ul li:hover {
 	padding-right: 3px; 
 	float:right;
 }
-#container1{
-	width: 100%;
-}
 #main{
 	float: left;
 	width: 80%;
-	height: 100%;
 }
-.hey {
-	color: blue;
+#main h1 {
+	text-align: center;
+}
+#main p {
+	text-indent: 20px;
 }
 aside
 {
@@ -61,6 +46,7 @@ aside
     background-color:#eeeeee;
     height: 500px;
     width:20%;
+    min-width: 200px;
     float:left;
     padding:5px;
 }

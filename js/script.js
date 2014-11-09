@@ -2,16 +2,16 @@ var ractive = new Ractive({
 						  el: 'main',
 						  template: '#template',
 						  data : {
-							title: 'hey',
+							title: 'Добро Пожаловать!',
 							text: 'oppa' }
 						  });
 
-document.getElementById( 'main_button' ).addEventListener( 'click', hel);
-document.getElementById( 'how_button' ).addEventListener( 'click', hello);
-document.getElementById( 'support_button' ).addEventListener( 'click', hell);
+document.getElementById( 'main_button' ).addEventListener( 'click', welcome);
+document.getElementById( 'how_button' ).addEventListener( 'click', how);
+document.getElementById( 'support_button' ).addEventListener( 'click', support);
 
-function hel () {
-	ractive.set( 'title', 'hello' );
+function welcome () {
+	ractive.set( 'title', 'Добро Пожаловать!' );
 	make_nonactive();
 	make_active(this);
 }
@@ -21,21 +21,21 @@ function make_active (id) {
 }
 
 function make_nonactive () {
-	var doc = document.getElementsByClassName( 'but' );
+	var doc = document.getElementsByClassName( 'nav_button' );
 	for (var i = doc.length - 1; i >= 0; i--) {
 		doc[i].style.backgroundColor = 'transparent';
 	};
 }
 
-function hell () {
+function support () {
 	make_nonactive();
 	make_active(this);
-	ractive.set( 'title', 'sup' );
+	ractive.set( 'title', 'Поддержка' );
 }
 
 
-function hello () {
+function how () {
 	make_nonactive();
 	make_active(this);
-	ractive.set( 'title', 'hey' );
+	ractive.set( 'title', 'Как это работает' );
 }

@@ -59,11 +59,12 @@ aside ul
 aside ul li:hover {
 	background-color:yellow;
 }
-li.game{
+aside ul li {
 	padding-top: 5px;
 	padding-bottom: 5px;
 	padding-left: 5px;
 }
+
 a.game_button {
 	display:block;
 	cursor:pointer;

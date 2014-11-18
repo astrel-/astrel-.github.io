@@ -29,7 +29,7 @@ var keys;
 var numberOfItem;
 $.ajax({
   dataType: "json",
-  url: '2.json',
+  url: 'bubalus.json',
   success: function (data) {
     doc = data;
     make();

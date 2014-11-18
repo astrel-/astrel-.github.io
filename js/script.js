@@ -1,10 +1,11 @@
+/*
 var ractive = new Ractive({
 						  el: 'main',
 						  template: '#template',
 						  data : {
 							title: 'Добро Пожаловать!',
 							text: 'oppa' }
-						  });
+						  });*/
 
 document.getElementById( 'main_button' ).addEventListener( 'click', welcome);
 document.getElementById( 'how_button' ).addEventListener( 'click', how);

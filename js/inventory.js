@@ -1,3 +1,4 @@
+var numberOfElementsPerPage = 20;
 var inventoryTemplate;
 var ractive;
 $.ajax( '/templates/inventoryTemplate.html' ).then( function (template)  {
@@ -6,6 +7,8 @@ $.ajax( '/templates/inventoryTemplate.html' ).then( function (template)  {
     el: 'main',
     template: inventoryTemplate,
     data: {
+      items: new Array( numberOfElementsPerPage ),
+      id: new Array( numberOfElementsPerPage ),
       imageURL: '',
       marketName: '',
       marketable: 1,
@@ -34,7 +37,7 @@ $.ajax({
     doc = data;
     make();
     numberOfItem = 0;
-    show(numberOfItem);
+    showItems(numberOfItem);
   }
 });
 
@@ -43,20 +46,24 @@ function make(){
   keys = Object.keys(descriptions);
 };
 
-function show(i) {
+function showItems(i) {
   //console.log(descriptions[keys[i]]);
-  item = descriptions[keys[i]];
-  console.log(item);
-  ractive.set('imageURL', item.icon_url);
-  ractive.set('marketName', item.market_name);
-  ractive.set('marketable', item.marketable);
-  ractive.set('tradable', item.tradable);
-  ractive.set('type', item.type);
-  ractive.set('tags.quality', item.tags[0].name);
-  ractive.set('tags.rarity', item.tags[1].name);
-  ractive.set('tags.type', item.tags[2].name);
-  ractive.set('tags.slot', item.tags[3].name);
-  ractive.set('tags.hero', item.tags[4].name);
+  for (var itemNumber = i; itemNumber <numberOfElementsPerPage; itemNumber++) {
+    item = descriptions[keys[itemNumber]];
+    //console.log(item);
+    //ractive.set('id[')
+    ractive.set('imageURL['+itemNumber+']', item.icon_url);
+    /*
+    ractive.set('marketName', item.market_name);
+    ractive.set('marketable', item.marketable);
+    ractive.set('tradable', item.tradable);
+    ractive.set('type', item.type);
+    ractive.set('tags.quality', item.tags[0].name);
+    ractive.set('tags.rarity', item.tags[1].name);
+    ractive.set('tags.type', item.tags[2].name);
+    ractive.set('tags.slot', item.tags[3].name);
+    ractive.set('tags.hero', item.tags[4].name);*/
+  }
 };
 
 function show_next(){

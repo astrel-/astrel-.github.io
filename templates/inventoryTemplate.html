@@ -1,4 +1,21 @@
-<center>
+<div class='itemMain'>
+  <div class= 'itemContainer'>
+{{#items:i}}
+  <div class='itemHolder' id={{id}}>
+
+<img src='http://steamcommunity-a.akamaihd.net/economy/image/{{imageURL[i]}}'>
+{{id[i]}}
+
+
+  </div>
+{{/items}}
+</div>
+
+<div class='itemDescription'>
+</div>
+
+
+<!--center>
 <img src='http://steamcommunity-a.akamaihd.net/economy/image/{{imageURL}}'>
 <p>market name: {{marketName}}</p>
 <p>marketable?: {{marketable}}</p>
@@ -12,7 +29,7 @@
 <p>hero: {{hero}}</p>
 {{/with}}
 <button onclick='show_next()'>Next</button>
-</center>
+</center-->
 
 <!--
     data: {

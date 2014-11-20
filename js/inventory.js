@@ -7,6 +7,7 @@ $.ajax( '/templates/inventoryTemplate.html' ).then( function (template)  {
     el: 'main',
     template: inventoryTemplate,
     data: {
+      activeItemURL: '',
       items: new Array( numberOfElementsPerPage ),
       id: new Array( numberOfElementsPerPage ),
       imageURL: '',
@@ -48,10 +49,11 @@ function make(){
 
 function showItems(i) {
   //console.log(descriptions[keys[i]]);
+  ractive.set( 'activeItemURL', descriptions[keys[0]].icon_url);
   for (var itemNumber = i; itemNumber <numberOfElementsPerPage; itemNumber++) {
     item = descriptions[keys[itemNumber]];
     //console.log(item);
-    //ractive.set('id[')
+    ractive.set('id['+itemNumber+']', item.market_name);
     ractive.set('imageURL['+itemNumber+']', item.icon_url);
     /*
     ractive.set('marketName', item.market_name);
@@ -70,6 +72,22 @@ function show_next(){
   numberOfItem ++;
   show(numberOfItem);
 };
+
+function myfunc () {
+  alert('2');
+}
+
+var docs = document.getElementsByClassName( 'idlol' );
+console.log(docs);
+
+for (var i=0; i<docs.length; i++) {
+  console.log(docs[i]);
+  docs[i].addEventListener( 'click', myfunc);
+}
+
+
+
+
 
 
 

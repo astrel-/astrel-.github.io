@@ -36,9 +36,11 @@ nav ul li a:hover {
 	float: left;
 	width: calc(100% - 200px);
 }
-.itemMain {
-	margin-left: 5px;
+.inventoryMain {
 	margin-top: 5px;
+	margin-left: 5px;
+}
+.itemMain {
 }
 .itemContainer {
 	float: left;
@@ -61,8 +63,25 @@ nav ul li a:hover {
 	width: 98px;
 }
 .itemDescription {
-	width: 100px;
 	float: left;
+	padding: 5px;
+	border-style: groove;
+	width: 275px;
+	height: 100%;
+}
+.game {
+	padding-top: 2px;
+	padding-bottom: 4px;
+	border-style: none none solid none;
+	border-width: 1px;
+}
+.sell_item {
+	padding-top: 4px;
+	text-align: center;
+}
+#item_title p{
+	padding-top: 6px;
+	text-align: center;
 }
 aside
 {

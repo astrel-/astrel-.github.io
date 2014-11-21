@@ -11,12 +11,14 @@ $.ajax( '/templates/inventoryTemplate.html' ).then( function (template)  {
       items: new Array( numberOfElementsPerPage ),
       id: new Array( numberOfElementsPerPage ),
       imageURL: '',
-      marketName: '',
+      appid: '',
+      name: '',
       marketable: 1,
       tradable: 1,
       type: '',
+      description: '',
       tags: {
-        quality: 'try',
+        quality: '',
         rarity: '',
         type: '',
         slot: '',
@@ -33,7 +35,7 @@ var keys;
 var numberOfItem;
 $.ajax({
   dataType: "json",
-  url: 'bubalus.json',
+  url: '2.json',
   success: function (data) {
     doc = data;
     make();
@@ -49,15 +51,25 @@ function make(){
 
 function showItems(i) {
   //console.log(descriptions[keys[i]]);
-  ractive.set( 'activeItemURL', descriptions[keys[0]].icon_url);
+  var activeItem = descriptions[keys[0]];
+  ractive.set( 'activeItemURL', activeItem.icon_url);
+  ractive.set('name', activeItem.name);
+  ractive.set('appid', activeItem.appid);
+  ractive.set('type', activeItem.type);
+  ractive.set('description', activeItem.descriptions[0].value);
+  ractive.set('tags.quality', activeItem.tags[0].name);
+  ractive.set('tags.rarity', activeItem.tags[1].name);
+  ractive.set('tags.type', activeItem.tags[2].name);
+  ractive.set('tags.slot', activeItem.tags[3].name);
+  ractive.set('tags.hero', activeItem.tags[4].name);
+  ractive.set('tradable', activeItem.tradable);
+  console.log(activeItem);
   for (var itemNumber = i; itemNumber <numberOfElementsPerPage; itemNumber++) {
     item = descriptions[keys[itemNumber]];
     //console.log(item);
     ractive.set('id['+itemNumber+']', item.market_name);
     ractive.set('imageURL['+itemNumber+']', item.icon_url);
-    /*
-    ractive.set('marketName', item.market_name);
-    ractive.set('marketable', item.marketable);
+    /*ractive.set('marketable', item.marketable);
     ractive.set('tradable', item.tradable);
     ractive.set('type', item.type);
     ractive.set('tags.quality', item.tags[0].name);

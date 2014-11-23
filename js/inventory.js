@@ -1,6 +1,9 @@
 var numberOfElementsPerPage = 20;
 var inventoryTemplate;
 var ractive;
+
+function show_inventory () {
+
 $.ajax( '/templates/inventoryTemplate.html' ).then( function (template)  {
   inventoryTemplate = template;
   ractive = new Ractive({
@@ -44,6 +47,7 @@ $.ajax({
   }
 });
 
+
 function make(){
   descriptions = doc.rgDescriptions;
   keys = Object.keys(descriptions);
@@ -66,50 +70,15 @@ function showItems(i) {
   console.log(activeItem);
   for (var itemNumber = i; itemNumber <numberOfElementsPerPage; itemNumber++) {
     item = descriptions[keys[itemNumber]];
-    //console.log(item);
     ractive.set('id['+itemNumber+']', item.market_name);
     ractive.set('imageURL['+itemNumber+']', item.icon_url);
-    /*ractive.set('marketable', item.marketable);
-    ractive.set('tradable', item.tradable);
-    ractive.set('type', item.type);
-    ractive.set('tags.quality', item.tags[0].name);
-    ractive.set('tags.rarity', item.tags[1].name);
-    ractive.set('tags.type', item.tags[2].name);
-    ractive.set('tags.slot', item.tags[3].name);
-    ractive.set('tags.hero', item.tags[4].name);*/
   }
 };
+
+}
 
 function show_next(){
   numberOfItem ++;
   show(numberOfItem);
 };
 
-function myfunc () {
-  alert('2');
-}
-
-var docs = document.getElementsByClassName( 'idlol' );
-console.log(docs);
-
-for (var i=0; i<docs.length; i++) {
-  console.log(docs[i]);
-  docs[i].addEventListener( 'click', myfunc);
-}
-
-
-
-
-
-
-
-//var inventoryJSON = JSON.stringify( 2.json );
-//var inventoryObj = JSON.parse( inventoryJSON );
-//console.log(inventoryObj);
-//console.log(inventory.rgDescripions.length)
-//console.log(inventory.rgInventory.length)
-
-
-
-//http://steamcommunity.com/profiles/76561198004282448/inventory/json/570/2
-//http://steamcommunity.com/profiles/76561198004282448/inventory/json/753/6

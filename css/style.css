@@ -10,6 +10,18 @@ header h2{
   text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
 }
 
+#container {
+	float: left;
+	width: 100%;
+    background: linear-gradient(
+    	to right,
+    	
+	    #eeeeee 200px, 
+	  	white 200px, white calc(100% - 200px), 
+	  	white calc(100% - 200px)
+    	);
+}
+
 #left_sidebar
 {
     line-height:30px;
@@ -23,6 +35,7 @@ header h2{
 	margin: 0;
 	padding: 5px;
 	text-align: left;
+    list-style-type: none;
 }
 #left_sidebar ul li:hover {
 	background-color:yellow;
@@ -41,40 +54,15 @@ a.game_button {
 	padding-left: 5px;
 }
 
-#right_sidebar {
-	float:left;
-	width: 200px;
-}
-#container {
-	float: left;
-	width: 100%;
-    background: linear-gradient(
-    	to right,
-    	
-	    #eeeeee 200px, 
-	  	white 200px, white calc(100% - 200px), 
-	  	#eeeeee calc(100% - 200px)
-    	);
-}
-#left_menu {
-	    line-height:30px;
-    background-color:#eeeeee;
-    width:200px;
-    float:left;
-    padding:5px;
-}
-#login {
-	padding-top: 5px;
-	padding-right: 3px; 
-	float:right;
-}
 #main{
 	float: left;
 	width: calc(100% - 400px);
+	min-width: 814px;
 }
 .inventoryMain {
-	margin-top: 5px;
-	margin-left: 5px;
+	float:left;
+	text-align: center;
+	width: 100%;
 }
 .itemMain {
 }
@@ -120,6 +108,40 @@ a.game_button {
 	text-align: center;
 }
 
+#right_sidebar {
+	float:left;
+	width: 200px;
+}
+#login {
+	padding-top: 5px;
+	padding-right: 3px; 
+	text-align: right;
+}
+#user_bar {
+	float:left;
+	padding-top: 5px;
+}
+#user_bar ul {
+    list-style-type: none;
+}
+#user {
+	float:left;
+	width: 200px;
+}
+#user_pic {
+	float:left;
+	width:50px;
+	margin-right: 10px;
+}
+#user_name {
+	float:left;
+	width:140px;
+}
+
+#test {
+	text-align: right;
+	padding-right: 5px;
+}
 footer {
 	background-color: #000000;
 	color: #ffffff;

@@ -1,0 +1,51 @@
+<div id='test'>
+    <span>Logged in?<br></span>
+<INPUT TYPE="radio" NAME="logged" VALUE='y' onclick='radioClicked(this)'>  Yes
+<INPUT TYPE="radio" NAME="logged" VALUE='n' checked onclick='radioClicked(this)'>  No
+</div>
+
+    {{#if !signedIn}}
+    <div id='user_bar'>
+ 				<div id='user'>
+ 					{{#with user}}
+ 					<div id='user_pic'>
+	 					<img src={{pic}} width='50px'>
+	 				</div>
+	 				<div id='user_name'>
+	 					<span>{{name}}<br>{{money}} р</span>
+	 				</div>
+	 				{{/with}}
+ 				</div>
+                <div class='right_sidebar_option'>
+                    <a id='sell' onclick='show_inventory()'>
+                		Продать
+                    </a>
+                </div>
+                <div class='right_sidebar_option'>
+                    <a id='deposit' onclick='deposit()'>
+                        Пополнить счет
+                    </a>
+                </div>
+                <div class='right_sidebar_option'>
+                    <a id='withdraw' onclick='withdraw()'>
+                        Вывести
+                    </a>
+                </div>
+                <div class='right_sidebar_option'>
+                    <a id='logout' onclick='logout()'>
+                        Выход
+                    </a>
+                </div>
+    </div>
+
+    {{else}}
+
+    <div id="login">
+    	<a href="html/index_en.html"><img src="pic/sits_small.png"></a>
+        <p>Для покупки или продажи предметов и гифтов, авторизуйтесь через Steam</p>
+  	</div>
+    {{/if}}
+
+
+
+</div>

@@ -9,6 +9,19 @@ show_main();
  // document.getElementById( 'sell' ).addEventListener( 'click', trying);
  // document.getElementById( 'logout' ).addEventListener( 'click', logout);
 //});
+function choose_gam ( e, i ) {
+	var docs = document.getElementsByClassName( 'game_button' );
+	//console.log(docs);
+	for (var i = docs.length - 1; i >= 0; i--) {
+		docs[i].style.backgroundColor = 'initial';
+	};
+	//docs[0].style.backgroundColor = 'initial';
+	e.style.backgroundColor = 'yellow';
+	console.log( e.style.backgroundColor );
+	console.log( i );
+
+
+}
 
 function withdraw () {
 	$.ajax( '/templates/withdrawTemplate.html' ).then( function (template)  {
@@ -17,7 +30,6 @@ function withdraw () {
 						  el: 'main',
 						  template: withdrawTemplate,
 						  data : {
-						  		gree: 'hello'
 						  	}
 	    });
 	});
@@ -30,7 +42,6 @@ function deposit () {
 						  el: 'main',
 						  template: depositTemplate,
 						  data : {
-						  		gree: 'hello'
 						  	}
 	    });
 	});
@@ -48,7 +59,6 @@ function show_main () {
 							  el: 'main',
 							  template: mainTemplate,
 							  data : {
-							  	gree: 'hello'
 							  }
 							  });
 });
@@ -71,44 +81,11 @@ $.ajax( '/templates/rightSidebarTemplate.html' ).then( function (template)  {
 						  });
 });
  
+
+//For debugging 
 function radioClicked ( a ) {
 	if ( a.value == 'y' ) 
 		right_sidebar.set( 'signedIn', true );
 	else 
 		right_sidebar.set( 'signedIn', false);
 };
-
-
-document.getElementById( 'main_button' ).addEventListener( 'click', welcome);
-document.getElementById( 'how_button' ).addEventListener( 'click', how);
-document.getElementById( 'support_button' ).addEventListener( 'click', support);
-
-function welcome () {
-	ractive.set( 'title', 'Добро Пожаловать!' );
-	make_nonactive();
-	make_active(this);
-}
-
-function make_active (id) {
-	id.style.backgroundColor = 'white';
-}
-
-function make_nonactive () {
-	var doc = document.getElementsByClassName( 'nav_button' );
-	for (var i = doc.length - 1; i >= 0; i--) {
-		doc[i].style.backgroundColor = 'transparent';
-	};
-}
-
-function support () {
-	make_nonactive();
-	make_active(this);
-	ractive.set( 'title', 'Поддержка' );
-}
-
-
-function how () {
-	make_nonactive();
-	make_active(this);
-	ractive.set( 'title', 'Как это работает' );
-}

@@ -4,7 +4,7 @@
 <INPUT TYPE="radio" NAME="logged" VALUE='n' checked onclick='radioClicked(this)'>  No
 </div>
 
-    {{#if !signedIn}}
+    {{#if signedIn}}
     <div id='user_bar'>
  				<div id='user'>
  					{{#with user}}

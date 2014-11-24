@@ -5,23 +5,6 @@ var rightSidebarTemplate;
 
 show_main();
 
-//window.addEventListener('load',function(){
- // document.getElementById( 'sell' ).addEventListener( 'click', trying);
- // document.getElementById( 'logout' ).addEventListener( 'click', logout);
-//});
-function choose_gam ( e, i ) {
-	var docs = document.getElementsByClassName( 'game_button' );
-	//console.log(docs);
-	for (var i = docs.length - 1; i >= 0; i--) {
-		docs[i].style.backgroundColor = 'initial';
-	};
-	//docs[0].style.backgroundColor = 'initial';
-	e.style.backgroundColor = 'yellow';
-	console.log( e.style.backgroundColor );
-	console.log( i );
-
-
-}
 
 function withdraw () {
 	$.ajax( '/templates/withdrawTemplate.html' ).then( function (template)  {

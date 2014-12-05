@@ -16,7 +16,7 @@ header h2{
     background: linear-gradient(
     	to right,
     
-	    #eeeeee 200px, 
+	    orange 200px, 
 	  	white 200px, white calc(100% - 200px), 
 	  	white calc(100% - 200px)
     	);

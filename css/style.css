@@ -10,6 +10,7 @@ header {
 	  #465298 10px,
 	  #465298 20px
 );*/
+	background: black;
 	background-image: url( '/back.png' );
 	text-align: center;
 }

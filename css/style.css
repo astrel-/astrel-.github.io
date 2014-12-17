@@ -3,13 +3,6 @@
 #ffc203*/
 
 header {
-	/*background: repeating-linear-gradient(
-	  45deg,
-	  #606dbc,
-	  #606dbc 10px,
-	  #465298 10px,
-	  #465298 20px
-);*/
 	background: black;
 	background-image: url( '/back.png' );
 	text-align: center;
@@ -62,7 +55,6 @@ a.game_button {
 	text-decoration:none;
 	color: white;
 	font-weight: solid;
-
 }
 #left_sidebar span {
 	padding-left: 5px;
@@ -71,7 +63,7 @@ a.game_button {
 #main{
 	float: left;
 	width: calc(100% - 400px);
-	min-width: 814px;
+	/*min-width: 814px;*/
 }
 .inventoryMain {
 	float:left;
@@ -130,6 +122,11 @@ a.game_button {
 	padding-top: 5px;
 	padding-right: 3px; 
 	text-align: right;
+	color: #e18728;
+}
+#steam2 {
+	width: 154px;
+	float: right;
 }
 #user_bar {
 	float:left;
@@ -157,7 +154,8 @@ a.game_button {
 	padding-right: 5px;
 }
 footer {
-	background-color: #000000;
+	background: black;
+	background-image: url( '/back.png' );
 	color: #ffffff;
 	clear: both;
 	text-align: center;

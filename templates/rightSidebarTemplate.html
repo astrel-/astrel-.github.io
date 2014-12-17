@@ -1,6 +1,10 @@
 <div id='test'>
     <span>Logged in?<br></span>
-<INPUT TYPE="radio" NAME="logged" VALUE='y' onclick='radioClicked(this)'>  Yes
+<label class="radio-inline">
+    <INPUT TYPE="radio" NAME="logged" VALUE='y' onclick='radioClicked(this)'>  Yes
+</label>
+    <!--label class="radio-inline"-->
+
 <INPUT TYPE="radio" NAME="logged" VALUE='n' checked onclick='radioClicked(this)'>  No
 </div>
 
@@ -41,8 +45,9 @@
     {{else}}
 
     <div id="login">
-    	<a href="html/index_en.html"><img src="pic/sits_small.png"></a>
-        <p>Для покупки или продажи предметов и гифтов, авторизуйтесь через Steam</p>
+        <div id='steam1'>
+    	<a href="html/index_en.html"><img src="pic/sits_small.png"></a></div>
+        <div id='steam2'><p>Для покупки или продажи предметов и гифтов, пожалуйста, авторизуйтесь через Steam</p></div>
   	</div>
     {{/if}}
 

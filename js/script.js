@@ -5,7 +5,6 @@ var rightSidebarTemplate;
 
 show_main();
 
-
 function withdraw () {
 	$.ajax( '/templates/withdrawTemplate.html' ).then( function (template)  {
 		var withdrawTemplate = template;

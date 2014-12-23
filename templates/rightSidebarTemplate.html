@@ -1,12 +1,4 @@
-<div id='test'>
-    <span>Logged in?<br></span>
-<label class="radio-inline">
-    <INPUT TYPE="radio" NAME="logged" VALUE='y' onclick='radioClicked(this)'>  Yes
-</label>
-    <!--label class="radio-inline"-->
 
-<INPUT TYPE="radio" NAME="logged" VALUE='n' checked onclick='radioClicked(this)'>  No
-</div>
 
     {{#if signedIn}}
     <div id='user_bar'>
@@ -50,7 +42,13 @@
         <div id='steam2'><p>Для покупки или продажи предметов и гифтов, пожалуйста, авторизуйтесь через Steam</p></div>
   	</div>
     {{/if}}
-
+<div id='test'>
+    <span>Logged in?<br></span>
+<label class="radio-inline">
+    <INPUT TYPE="radio" NAME="logged" VALUE='y' onclick='radioClicked(this)'>  Yes
+</label>
+<INPUT TYPE="radio" NAME="logged" VALUE='n' checked onclick='radioClicked(this)'>  No
+</div>
 
 
 </div>

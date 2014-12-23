@@ -28,9 +28,8 @@
 <div id="container">
   
   <div id='left_sidebar'>
-    <hgroup>
       <ul>
-        <li><a style="text-decoration:none" class="game_button" onclick="choose_game(this,1)">
+        <li><a style="text-decoration:none" class="game_button active_game_button" onclick="choose_game(this,1)">
           <div>
           <img src="pic/games/steam.jpg">
           <span>Steam Games</span></div></a></li>
@@ -43,20 +42,7 @@
         <li><a style="text-decoration:none" class="game_button" onclick="choose_game(this,4)">
           <img src="pic/games/tf2.jpg">
           <span>Team Fortress</span></a></li>
-        <!--li><a style="text-decoration:none" class="game_button" onclick="choose_game( this, 5)">
-          <img src="pic/games/wf.jpg">
-          <span>Warframe</span></a></li>
-        <li><a style="text-decoration:none" class="game_button" onclick="choose_game( this, 6)">
-          <img src="pic/games/poe.jpg">
-          <span>Path of Exile</span></a></li>
-        <li><a style="text-decoration:none" class="game_button" onclick="choose_game( this, 7)">
-          <img src="pic/games/bb.jpg">
-          <span>BattleBlock Theater</span></a></li>
-        <li><a style="text-decoration:none" class="game_button" onclick="choose_game( this, 8)">
-          <img src="pic/games/sda.jpg">
-          <span>Sins of a Dark Age</span></a></li-->
       </ul>
-    </hgroup>
   </div>
 
   <div id="main">
@@ -82,9 +68,15 @@
   Qiwi/Yandex/WebMoney/Visa
 </footer>
 
+<script>
+  $.ajaxSetup({
+    cache: false
+  }); </script>
+<script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
 <script src="js/script.js"></script>
 <script src="js/inventory.js"></script>
 <script src="js/game.js"></script>
+
 
 </body>
 

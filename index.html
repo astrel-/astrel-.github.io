@@ -12,15 +12,20 @@
   <link href="http://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet" type="text/css">
   <script src='http://cdn.ractivejs.org/latest/ractive.js'></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://rawgit.com/flatiron/director/master/build/director.min.js"></script>
 <style type="text/css"></style>
 </head>
 
 <body>
 
 <header>
-  <div id='title'>
-        <h2>YBARRA</h2>
-  </div>
+  <a href='/' class='title'>
+      <div id='title'>
+        <h2>
+          YBARRA
+        </h2>
+    </div>
+  </a>
 </header>
 
 
@@ -29,17 +34,17 @@
   
   <div id='left_sidebar'>
       <ul>
-        <li><a style="text-decoration:none" class="game_button active_game_button" onclick="choose_game(this,1)">
+        <li><a href='#/steam' class="game_button" onclick="choose_game(this,1)">
           <div>
           <img src="pic/games/steam.jpg">
           <span>Steam Games</span></div></a></li>
-        <li><a style="text-decoration:none" class="game_button" onclick="choose_game(this,2)">
+        <li><a href='#/dota' class="game_button" onclick="choose_game(this,2)">
           <img src="pic/games/dota2.jpg">
           <span>Dota 2</span></a></li>
-        <li><a style="text-decoration:none" class="game_button" onclick="choose_game(this,3)">
+        <li><a href='#/cs-go' class="game_button" onclick="choose_game(this,3)">
           <img src="pic/games/csgo.jpg">
           <span>CS:GO</span></a></li>
-        <li><a style="text-decoration:none" class="game_button" onclick="choose_game(this,4)">
+        <li><a href='#/tf' class="game_button" onclick="choose_game(this,4)">
           <img src="pic/games/tf2.jpg">
           <span>Team Fortress</span></a></li>
       </ul>
@@ -73,6 +78,7 @@
     cache: false
   }); </script>
 <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+<script src="js/router.js"></script>
 <script src="js/script.js"></script>
 <script src="js/inventory.js"></script>
 <script src="js/game.js"></script>

@@ -15,6 +15,10 @@ header h2{
 	color: #FF9933;
   /*text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);*/
 }
+.title, .title:hover, .title:visited, .title:focus {
+	color: #FF9933;
+	text-decoration: none;
+}
 #container {
 	float: left;
 	width: 100%;
@@ -53,8 +57,9 @@ header h2{
 	color: white;
 	font-weight: solid;
 }
-.game_button:hover {
+.game_button:hover, .game_button:visited, .game_button:focus {
 	color: white;
+	text-decoration:none;
 }
 .active_game_button {
 	background-color: #333366;

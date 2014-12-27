@@ -1,35 +1,37 @@
 var numberOfElementsPerPage = 20;
 var inventoryTemplate;
-var ractive;
+var inventory;
+
+
+show_inventory();
 
 function show_inventory () {
-
-$.ajax( '/templates/inventoryTemplate.html' ).then( function (template)  {
-  inventoryTemplate = template;
-  ractive = new Ractive({
-    el: 'main',
-    template: inventoryTemplate,
-    data: {
-      activeItemURL: '',
-      items: new Array( numberOfElementsPerPage ),
-      id: new Array( numberOfElementsPerPage ),
-      imageURL: '',
-      appid: '',
-      name: '',
-      marketable: 1,
-      tradable: 1,
-      type: '',
-      description: '',
-      tags: {
-        quality: '',
-        rarity: '',
+  $.ajax( '/templates/inventoryTemplate.html' ).then( function (template)  {
+    inventoryTemplate = template;
+    inventory = new Ractive({
+      el: 'main',
+      template: inventoryTemplate,
+      data: {
+        activeItemURL: '',
+        items: new Array( numberOfElementsPerPage ),
+        id: new Array( numberOfElementsPerPage ),
+        imageURL: '',
+        appid: '',
+        name: '',
+        marketable: 1,
+        tradable: 1,
         type: '',
-        slot: '',
-        hero: ''
+        description: '',
+        tags: {
+          quality: '',
+          rarity: '',
+          type: '',
+          slot: '',
+          hero: ''
+        }
       }
-    }
+    });
   });
-});
 
 
 var doc;
@@ -56,22 +58,22 @@ function make(){
 function showItems(i) {
   //console.log(descriptions[keys[i]]);
   var activeItem = descriptions[keys[0]];
-  ractive.set( 'activeItemURL', activeItem.icon_url);
-  ractive.set('name', activeItem.name);
-  ractive.set('appid', activeItem.appid);
-  ractive.set('type', activeItem.type);
-  ractive.set('description', activeItem.descriptions[0].value);
-  ractive.set('tags.quality', activeItem.tags[0].name);
-  ractive.set('tags.rarity', activeItem.tags[1].name);
-  ractive.set('tags.type', activeItem.tags[2].name);
-  ractive.set('tags.slot', activeItem.tags[3].name);
-  ractive.set('tags.hero', activeItem.tags[4].name);
-  ractive.set('tradable', activeItem.tradable);
+  inventory.set( 'activeItemURL', activeItem.icon_url);
+  inventory.set('name', activeItem.name);
+  inventory.set('appid', activeItem.appid);
+  inventory.set('type', activeItem.type);
+  inventory.set('description', activeItem.descriptions[0].value);
+  inventory.set('tags.quality', activeItem.tags[0].name);
+  inventory.set('tags.rarity', activeItem.tags[1].name);
+  inventory.set('tags.type', activeItem.tags[2].name);
+  inventory.set('tags.slot', activeItem.tags[3].name);
+  inventory.set('tags.hero', activeItem.tags[4].name);
+  inventory.set('tradable', activeItem.tradable);
   console.log(activeItem);
   for (var itemNumber = i; itemNumber <numberOfElementsPerPage; itemNumber++) {
     item = descriptions[keys[itemNumber]];
-    ractive.set('id['+itemNumber+']', item.market_name);
-    ractive.set('imageURL['+itemNumber+']', item.icon_url);
+    inventory.set('id['+itemNumber+']', item.market_name);
+    inventory.set('imageURL['+itemNumber+']', item.icon_url);
   }
 };
 

@@ -1,47 +1,42 @@
 <div class='inventoryMain'>
   <div class= 'itemContainer'>
-{{#items:i}}
-<a href='' class='idlol' id={{id[i]}}>
-  <div class='itemHolder' id={{id}}>
-
-
-<img src='http://steamcommunity-a.akamaihd.net/economy/image/{{imageURL[i]}}'>
-
-
-
+  {{#items:i}}
+    <a href='' class='idlol' id={{id[i]}}>
+    <div class='itemHolder' id={{id}}>
+      <img src='http://steamcommunity-a.akamaihd.net/economy/image/{{imageURL[i]}}'>
+    </div>
+   </a>
+ {{/items}}
+ <a href>sup</a>
+ <a href>boys</a>
   </div>
-  </a>
 
-{{/items}}
-</div>
-
-<div class='itemDescription'>
-
-  <img src='http://steamcommunity-a.akamaihd.net/economy/image/{{activeItemURL}}'>
-  <div id='item_title'>
-  <p id='item_name'>{{name}}</p>
+  <div class='itemDescription'>
+    <img src='http://steamcommunity-a.akamaihd.net/economy/image/{{activeItemURL}}'>
+    <div id='item_title'>
+      <p id='item_name'>{{name}}</p>
+    </div>
+    <div class='game'>
+      {{#if appid==570}} 
+        <img src='/pic/games/dota2.jpg'>
+        <span>{{type}}</span>
+      {{/if}}
+    </div>
+    <div class='game'><span>{{description}}</span>
+    </div>
+    <div class>
+      <span>Tags: {{#with tags}}
+        {{quality}}, {{rarity}}, {{type}}, {{slot}}, {{hero}}
+        {{/with}}</span>
+    </div>
+    <div class='sell_item'>
+      {{#if tradable==1}}
+        <button id='sell'>Продать</button>
+      {{else}}
+      Вы не можете торговать этим предметом
+      {{/if}}
+    </div>
   </div>
-  <div class='game'>
-    {{#if appid==570}} 
-    <img src='/pic/games/dota2.jpg'>
-    <span>{{type}}</span>
-    {{/if}}
-  </div>
-  <div class='game'><span>{{description}}</span>
-  </div>
-  <div class>
-  <span>Tags: {{#with tags}}
-  {{quality}}, {{rarity}}, {{type}}, {{slot}}, {{hero}}
-  {{/with}}</span>
-  </div>
-  <div class='sell_item'>
-    {{#if tradable==1}}
-    <button id='sell'>Продать</button>
-    {{else}}
-    Вы не можете торговать этим предметом
-    {{/if}}
-  </div>
-</div>
 </div>
 
 

@@ -3,7 +3,8 @@ var mainTemplate;
 var right_sidebar;
 var rightSidebarTemplate;
 
-show_main();
+//show_main();
+
 
 function withdraw () {
 	$.ajax( '/templates/withdrawTemplate.html' ).then( function (template)  {

@@ -18,19 +18,45 @@
 
 <body>
 
-<header>
-  <a href='/' class='title'>
-      <div id='title'>
-        <h2>
-          YBARRA
-        </h2>
+
+<div id='debug'>
+      <span>Logged in?</span><br>
+<label class="radio-inline">
+    <INPUT TYPE="radio" NAME="logged" VALUE='y' onclick='radioClicked(this)'>  Yes
+</label>
+<INPUT TYPE="radio" NAME="logged" VALUE='n' checked onclick='radioClicked(this)'>  No
+</div>
+
+<div id="main-menu-container">
+  <header>
+    <a href='/' class='title'>
+        <div id='title'>
+          <h2>
+            YBARRA
+          </h2>
+        </div>
+    </a>
+  </header>
+
+  <div id="login" class>
+    <div id='steam_log_in'>
+      <a href="html/index_en.html"><img src="pic/sits_small.png"></a>
     </div>
-  </a>
-</header>
+  </div>
+
+  <!--footer>
+    <div id='rules'>
+      <a href='' class='rules'>Правила Пользования</a>
+    </div>
+  </footer-->
+</div>
 
 
 
-<div id="container">
+
+
+
+<!--div id="container">
   
   <div id='left_sidebar'>
       <ul>
@@ -61,17 +87,13 @@
 
 </div>
 </div>
-</div>
+</div-->
 
 
 
 
-<footer>
-  <div id='rules'>
-  <a href=''>Правила Пользования</a>
-  </div>
-  Qiwi/Yandex/WebMoney/Visa
-</footer>
+
+
 
 <script>
   $.ajaxSetup({

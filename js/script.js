@@ -1,10 +1,48 @@
 var main;
 var mainTemplate;
-var right_sidebar;
-var rightSidebarTemplate;
+var login;
+var loginTemplate;
 
 //show_main();
+login();
 
+$("document").ready(function($){
+    var nav = $('#login');
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 130) {
+            nav.addClass("f-nav");
+        } else {
+            nav.removeClass("f-nav");
+        }
+    });
+});
+
+function login () {
+	$.ajax( '/templates/login.html' ).then( function (template)  {
+	loginTemplate = template;
+	login = new Ractive({
+						  el: 'login',
+						  template: loginTemplate,
+						  data : {
+							signedIn: false,
+							user : {
+								pic: 'av.jpg',
+								name: 'Bubalus',
+								money: 900
+							}
+							}
+						  });
+});
+}
+
+//For debugging 
+function radioClicked ( a ) {
+	if ( a.value == 'y' ) 
+		login.set( 'signedIn', true );
+	else 
+		login.set( 'signedIn', false);
+};
 
 function withdraw () {
 	$.ajax( '/templates/withdrawTemplate.html' ).then( function (template)  {
@@ -65,10 +103,3 @@ $.ajax( '/templates/rightSidebarTemplate.html' ).then( function (template)  {
 });
  
 
-//For debugging 
-function radioClicked ( a ) {
-	if ( a.value == 'y' ) 
-		right_sidebar.set( 'signedIn', true );
-	else 
-		right_sidebar.set( 'signedIn', false);
-};

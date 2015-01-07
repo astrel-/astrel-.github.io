@@ -36,6 +36,9 @@
    	width: 998px;
    	height: 25px;
 }
+#login span{
+	padding-right: 10px;
+}
 .f-nav{  /* To fix main menu container */
     z-index: 9999;
     position: fixed;

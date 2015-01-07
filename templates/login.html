@@ -1,7 +1,7 @@
 {{#if signedIn}}
 	{{#with user}}
 	<div id='userbar'>
-		{{name}} {{money}}
+		<a href>{{name}}</a> {{money}} <a href><span><font size=1>(выход)</font></span></a>
 	</div>
 	{{/with}}
 {{else}}
@@ -9,6 +9,8 @@
 	<p>Для покупки или продажи предметов и гифтов, пожалуйста, авторизуйтесь через Steam</p>
 </div-->
 <div id='steam_log_in'>
+	<a href><span>FAQ</span></a>
+	<a href><span>О проекте</span></a>
 	<a href="html/index_en.html"><img src="pic/sits_small.png"></a>
 </div>
 {{/if}}

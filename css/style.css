@@ -22,15 +22,19 @@
 	margin-right: auto;
 	padding-left: auto;
 	padding-right: auto;
-    height: 1000px;
+    AAheight: 5000px;
     width: 1000px;
     border-style: none dashed none dashed;
     border-width: 1px;
 }
 #login {
+	background: white;
+    border-style: dashed none dashed none;
+    border-width: 1px;
 	text-align: center;
     display: inline-block;
-   	width: 1000px;
+   	width: 998px;
+   	height: 25px;
 }
 .f-nav{  /* To fix main menu container */
     z-index: 9999;
@@ -55,12 +59,59 @@ header h2{
 
 #steam_log_in {
 	float:right;
-	padding-right: 4px;
+	padding-right: 2px;
 }
 #userbar {
 	float:left;
 	padding-left: 4px;
 }
+
+#container {
+	border-style: none none dashed none;
+	border-width: 1px;
+	height: 5000px;
+	width: 100%;
+}
+#left_sidebar {
+	height: 100%;
+    width:200px;
+    border-style: none dashed none none;
+    border-width: 1px;
+}
+#left_sidebar ul
+{
+	margin: 0;
+	padding: 5px;
+	text-align: left;
+    list-style-type: none;
+}
+#left_sidebar ul li:hover {
+	border-style: solid;
+	border-width: 1px;
+}
+.game_button {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	display:block;
+	cursor:pointer;
+	text-decoration:none;
+	color: white;
+	font-weight: solid;
+}
+.game_button:hover, .game_button:visited, .game_button:focus {
+	color: black;
+	text-decoration:none;
+}
+.active_game_button {
+	Abackground-cSDFolor: #333366;
+	border-style: solid;
+	border-width: 1px;
+}
+#left_sidebar span {
+	padding-left: 5px;
+}
+
 
 footer {
 	width: 1001px;
@@ -76,54 +127,6 @@ footer {
 
 
 
-#container {
-	float: left;
-	width: 100%;
-    background: linear-gradient(
-    	to right,
-    
-    	#FF9933 200px, 
-	  	white 200px, white calc(100% - 200px), 
-	  	white calc(100% - 200px)
-    	);
-}
-#left_sidebar
-{
-    width:200px;
-    float:left;
-    padding:5px;
-}
-#left_sidebar ul
-{
-	margin: 0;
-	padding: 5px;
-	text-align: left;
-    list-style-type: none;
-}
-#left_sidebar ul li:hover {
-	background-color: #333366;
-	color: white;
-}
-.game_button {
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 5px;
-	display:block;
-	cursor:pointer;
-	text-decoration:none;
-	color: white;
-	font-weight: solid;
-}
-.game_button:hover, .game_button:visited, .game_button:focus {
-	color: white;
-	text-decoration:none;
-}
-.active_game_button {
-	background-color: #333366;
-}
-#left_sidebar span {
-	padding-left: 5px;
-}
 
 #main{
 	float: left;

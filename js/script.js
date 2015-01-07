@@ -8,12 +8,15 @@ login();
 
 $("document").ready(function($){
     var nav = $('#login');
+    var container = $('#container');
 
     $(window).scroll(function () {
         if ($(this).scrollTop() > 130) {
             nav.addClass("f-nav");
+            container.css({'padding-top': '27px'}); //25px + 2px for borders
         } else {
             nav.removeClass("f-nav");
+            container.css({'padding-top': '0px'});
         }
     });
 });

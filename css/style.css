@@ -99,7 +99,7 @@ header h2{
 	display:block;
 	cursor:pointer;
 	text-decoration:none;
-	color: white;
+	color: black;
 	font-weight: solid;
 }
 .game_button:hover, .game_button:visited, .game_button:focus {

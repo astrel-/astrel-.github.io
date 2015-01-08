@@ -1,10 +1,11 @@
 var main;
 var mainTemplate;
-var login;
+var loginRactive;
 var loginTemplate;
 
 //show_main();
 login();
+
 
 $("document").ready(function($){
     var nav = $('#login');
@@ -24,7 +25,7 @@ $("document").ready(function($){
 function login () {
 	$.ajax( '/templates/login.html' ).then( function (template)  {
 	loginTemplate = template;
-	login = new Ractive({
+	loginRactive = new Ractive({
 						  el: 'login',
 						  template: loginTemplate,
 						  data : {
@@ -39,12 +40,13 @@ function login () {
 });
 }
 
+
 //For debugging 
 function radioClicked ( a ) {
 	if ( a.value == 'y' ) 
-		login.set( 'signedIn', true );
+		loginRactive.set( 'signedIn', true );
 	else 
-		login.set( 'signedIn', false);
+		loginRactive.set( 'signedIn', false);
 };
 
 function withdraw () {

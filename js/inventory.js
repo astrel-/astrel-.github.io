@@ -1,9 +1,11 @@
 var numberOfElementsPerPage = 20;
+var currentPage = 1;
+
 var inventoryTemplate;
 var inventory;
 
 
-show_inventory();
+//show_inventory();
 
 function show_inventory () {
   $.ajax( '/templates/inventoryTemplate.html' ).then( function (template)  {
@@ -37,28 +39,29 @@ function show_inventory () {
 var doc;
 var descriptions;
 var keys;
-var numberOfItem;
 $.ajax({
   dataType: "json",
   url: '2.json',
   success: function (data) {
     doc = data;
     make();
-    numberOfItem = 0;
-    showItems(numberOfItem);
+    currentPage = 1;
+    show_items(currentPage);
   }
 });
-
 
 function make(){
   descriptions = doc.rgDescriptions;
   keys = Object.keys(descriptions);
+  console.log(descriptions);
 };
 
-function showItems(i) {
+function show_items(currentPage) {
+  var currentItemNumber;
   //console.log(descriptions[keys[i]]);
+  /*
   var activeItem = descriptions[keys[0]];
-  inventory.set( 'activeItemURL', activeItem.icon_url);
+  inventory.set('activeItemURL', activeItem.icon_url);
   inventory.set('name', activeItem.name);
   inventory.set('appid', activeItem.appid);
   inventory.set('type', activeItem.type);
@@ -68,19 +71,21 @@ function showItems(i) {
   inventory.set('tags.type', activeItem.tags[2].name);
   inventory.set('tags.slot', activeItem.tags[3].name);
   inventory.set('tags.hero', activeItem.tags[4].name);
-  inventory.set('tradable', activeItem.tradable);
-  console.log(activeItem);
-  for (var itemNumber = i; itemNumber <numberOfElementsPerPage; itemNumber++) {
+  inventory.set('tradable', activeItem.tradable);*/
+  //console.log(activeItem);
+  //for (var itemNumber = numberOfElementsPerPage*(currentPage-1); itemNumber< ; itemNumber++) {
+  for (var itemNumber = numberOfElementsPerPage*(currentPage-1); itemNumber <numberOfElementsPerPage*currentPage; itemNumber++) {
+    currentItemNumber = itemNumber-numberOfElementsPerPage*(currentPage-1);
     item = descriptions[keys[itemNumber]];
-    inventory.set('id['+itemNumber+']', item.market_name);
-    inventory.set('imageURL['+itemNumber+']', item.icon_url);
+    inventory.set('id['+currentItemNumber+']', item.market_name);
+    inventory.set('imageURL['+currentItemNumber+']', item.icon_url);
   }
 };
 
 }
 
 function show_next(){
-  numberOfItem ++;
-  show(numberOfItem);
+  currentPage ++;
+  show_items(currentPage);
 };
 

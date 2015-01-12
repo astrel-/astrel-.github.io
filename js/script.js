@@ -22,6 +22,14 @@ $("document").ready(function($){
     });
 });
 
+$('.game_button').click(function() {
+	console.log('Hey');
+});
+
+$('#my_profile').click(function() {
+	
+});
+
 function login () {
 	$.ajax( '/templates/login.html' ).then( function (template)  {
 	loginTemplate = template;

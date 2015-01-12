@@ -1,40 +1,29 @@
 <!DOCTYPE html>
-<html lang="ru">
-
-<head>
-  <meta charset="utf-8" />
-
-  <meta name="steam trade">
-  <title>Ybarra</title>
-  <link rel="stylesheet" href="css/output.css" type="text/css">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link rel="shortcut icon" href="pic/favicon.ico">
-  <link href="http://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet" type="text/css">
-  <script src='http://cdn.ractivejs.org/latest/ractive.js'></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="https://rawgit.com/flatiron/director/master/build/director.min.js"></script>
+<meta charset="utf-8">
+<!-- TODO: name -->
+<meta name="steam trade">
+<title>Ybarra</title>
+<link rel="stylesheet" href="css/output.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="shortcut icon" href="pic/favicon.ico">
+<link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+<script src='//cdn.ractivejs.org/latest/ractive.js'></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//rawgit.com/flatiron/director/master/build/director.min.js"></script>
 <style type="text/css"></style>
-</head>
-
-<body>
-
 
 <div id='debug'>
-      <span>Logged in?</span><br>
-<label class="radio-inline">
-    <INPUT TYPE="radio" NAME="logged" VALUE='y' onclick='radioClicked(this)'>  Yes
-</label>
-<INPUT TYPE="radio" NAME="logged" VALUE='n' checked onclick='radioClicked(this)'>  No
+  <span>Logged in?</span><br>
+  <INPUT TYPE="radio" NAME="logged" VALUE='y' onclick='radioClicked(this)'>  Yes
+  <INPUT TYPE="radio" NAME="logged" VALUE='n' checked onclick='radioClicked(this)'>  No
 </div>
 
 <div id="main-menu-container">
   <header>
     <a href='/' class='title'>
-        <div id='title'>
-          <h2>
-            YBARRA
-          </h2>
-        </div>
+      <div id='title'>
+        <h2>YBARRA</h2>
+      </div>
     </a>
   </header>
 
@@ -47,34 +36,34 @@
   <div id='container'>
 
     <div id='left_sidebar'>
-        <ul>
-          <li><a href='#/steam' class="game_button" onclick="choose_game(this,1)">
-            <div>
-            <img src="pic/games/steam.jpg">
-            <span>Steam Games</span></div></a></li>
-          <li><a href='#/dota' class="game_button" onclick="choose_game(this,2)">
-            <img src="pic/games/dota2.jpg">
-            <span>Dota 2</span></a></li>
-          <li><a href='#/cs-go' class="game_button" onclick="choose_game(this,3)">
-            <img src="pic/games/csgo.jpg">
-            <span>CS:GO</span></a></li>
-          <li><a href='#/tf' class="game_button" onclick="choose_game(this,4)">
-            <img src="pic/games/tf2.jpg">
-            <span>Team Fortress</span></a></li>
-          <li><a href='#/tf' class="game_button" onclick="choose_game(this,5)">
-            <img src="pic/games/tf2.jpg">
-            <span>Продать</span></a></li>
-          <li>
-          <div id='my_profile'><a href='#/tf' class="game_button" onclick="choose_game(this,6)">
-            <img src="av.jpg" width='32px'>
-            <span>Личный кабинет</span></a>
-          </div></li>
-        </ul>      
+      <ul>
+        <li><a href='#/steam' class="game_button" onclick="choose_game(this,1)">
+          <div>
+          <img src="pic/games/steam.jpg">
+          <span>Steam Games</span></div></a></li>
+        <li><a href='#/dota' class="game_button" onclick="choose_game(this,2)">
+          <img src="pic/games/dota2.jpg">
+          <span>Dota 2</span></a></li>
+        <li><a href='#/cs-go' class="game_button" onclick="choose_game(this,3)">
+          <img src="pic/games/csgo.jpg">
+          <span>CS:GO</span></a></li>
+        <li><a href='#/tf' class="game_button" onclick="choose_game(this,4)">
+          <img src="pic/games/tf2.jpg">
+          <span>Team Fortress</span></a></li>
+        <li><a href='#/tf' class="game_button" onclick="choose_game(this,5)">
+          <img src="pic/games/tf2.jpg">
+          <span>Продать</span></a></li>
+        <li>
+        <div id='my_profile'><a href='#/tf' class="game_button" onclick="choose_game(this,6)">
+          <img src="av.jpg" width='32px'>
+          <span>Личный кабинет</span></a>
+        </div></li>
+      </ul>      
     </div>
 
-	<div id="main" class='col'>
+  <div id="main" class='col'>
 
-	</div>
+  </div>
 
   </div>
 
@@ -122,8 +111,3 @@
 <script src="js/script.js"></script>
 <script src="js/inventory.js"></script>
 <script src="js/game.js"></script>
-
-
-</body>
-
-</html>

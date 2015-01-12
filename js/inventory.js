@@ -5,7 +5,7 @@ var inventoryTemplate;
 var inventory;
 
 
-//show_inventory();
+show_inventory();
 
 function show_inventory () {
   $.ajax( '/templates/inventoryTemplate.html' ).then( function (template)  {

@@ -22,11 +22,11 @@ $("document").ready(function($){
     });
 });
 
-$('.game_button').click(function() {
+$('.game-button').click(function() {
 	console.log('Hey');
 });
 
-$('#my_profile').click(function() {
+$('#my-profile').click(function() {
 	
 });
 

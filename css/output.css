@@ -86,7 +86,7 @@ header {
   z-index: -1;
   left: 0; }
 
-.game-button {
+.game-button, #profile {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
@@ -96,7 +96,7 @@ header {
   color: black;
   font-weight: solid; }
 
-.game-button:hover, .game-button:visited, .game-button:focus {
+.game-button:hover, #profile:hover, .game-button:visited, #profile:visited, .game-button:focus, #profile:focus {
   color: black;
   text-decoration: none; }
 
@@ -125,19 +125,19 @@ footer {
   text-decoration: none; }
 
 /****** */
-.inventoryMain {
+.inventory-main {
   padding-left: 3px;
   float: left;
   text-align: center;
   width: 100%;
   height: 1000px; }
 
-.itemContainer {
+.item-container {
   float: left;
   width: 515px;
   height: 450px; }
 
-.itemHolder {
+.item-holder {
   text-align: center;
   height: 100px;
   width: 100px;
@@ -147,10 +147,10 @@ footer {
   border-style: solid;
   border-width: 1px;
   border-color: black; }
-  .itemHolder img {
+  .item-holder img {
     width: 98px; }
 
-.itemDescription {
+.item-description {
   float: left;
   padding: 5px;
   border-style: groove;
@@ -163,11 +163,11 @@ footer {
   border-style: none none solid none;
   border-width: 1px; }
 
-.sell_item {
+.sell-item {
   padding-top: 4px;
   text-align: center; }
 
-#item_title p {
+#item-title p {
   padding-top: 6px;
   text-align: center; }
 

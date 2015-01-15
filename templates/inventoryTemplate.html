@@ -1,20 +1,26 @@
-<div class='inventoryMain'>
-  <div class= 'itemContainer'>
-  {{#items:i}}
-    <a href='' class='idlol' id={{id[i]}}>
-    <div class='itemHolder' id={{id}}>
-      <img src='http://steamcommunity-a.akamaihd.net/economy/image/{{imageURL[i]}}'>
-    </div>
-   </a>
- {{/items}}
- <a onclick="show_next()">Previous</a>
- <a href>Next</a>
+<div class='inventory-main'>
+  <div class= 'item-container'>
+    {{#items:i}}
+      {{#if (id[i])}}
+        <a href='' class='idlol' id={{id[i]}}>
+          <div class='item-holder' id={{id}}>
+            <img src='http://steamcommunity-a.akamaihd.net/economy/image/{{imageURL[i]}}'>
+          </div>
+        </a>
+      {{else}}
+        <div class="item-holder">
+        </div>
+      {{/if}}
+
+    {{/items}}
+    <a onclick="show_next()">Previous</a>
+    <a href>Next</a>
   </div>
 
-  <div class='itemDescription'>
+  <div class='item-description'>
     <img src='http://steamcommunity-a.akamaihd.net/economy/image/{{activeItemURL}}'>
-    <div id='item_title'>
-      <p id='item_name'>{{name}}</p>
+    <div id='item-title'>
+      <p id='item-name'>{{name}}</p>
     </div>
     <div class='game'>
       {{#if appid==570}} 
@@ -29,7 +35,7 @@
         {{quality}}, {{rarity}}, {{type}}, {{slot}}, {{hero}}
         {{/with}}</span>
     </div>
-    <div class='sell_item'>
+    <div class='sell-item'>
       {{#if tradable==1}}
         <button id='sell'>Продать</button>
       {{else}}

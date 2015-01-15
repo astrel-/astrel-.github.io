@@ -20,32 +20,41 @@ $("document").ready(function($){
             container.css({'padding-top': '0px'});
         }
     });
+
+    $( ".game-button" ).click(function() {
+		var index = $( ".game-button" ).index( this ) + 1;
+		console.log( index );
+		choose_game( this, index );
+	});
+
+    $( "#profile" )
+    	.click(function() {
+			showProfile();
+		});
+
 });
 
-$('.game-button').click(function() {
-	console.log('Hey');
-});
-
-$('#my-profile').click(function() {
-	
-});
 
 function login () {
-	$.ajax( 'templates/login.html' ).then( function (template)  {
-	loginTemplate = template;
-	loginRactive = new Ractive({
-						  el: 'login',
-						  template: loginTemplate,
-						  data : {
-							signedIn: false,
-							user : {
-								pic: 'av.jpg',
-								name: 'Bubalus',
-								money: 900
-							}
-							}
-						  });
-});
+	$.ajax( 'templates/login.html' )
+		.done( function (template)  {
+			loginTemplate = template;
+			loginRactive = new Ractive({
+				el: 'login',
+				template: loginTemplate,
+				data : {
+					signedIn: false,
+					user : {
+						pic: 'av.jpg',
+						name: 'Bubalus',
+						money: 900
+					}
+				}
+			});
+		})
+		.fail( function () {
+			console.log( "error" );
+		});		
 }
 
 
@@ -56,6 +65,10 @@ function radioClicked ( a ) {
 	else 
 		loginRactive.set( 'signedIn', false);
 };
+
+function showProfile() {
+	console.log( "Showing Profile" );
+}
 
 function withdraw () {
 	$.ajax( 'templates/withdrawTemplate.html' ).then( function (template)  {

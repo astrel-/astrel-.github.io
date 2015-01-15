@@ -10,13 +10,14 @@
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
 <script src="//cdn.ractivejs.org/latest/ractive.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="//rawgit.com/flatiron/director/master/build/director.min.js"></script>
+<!--script src="//rawgit.com/flatiron/director/master/build/director.min.js"></script-->
 
 
 <div id="debug">
   <span>Logged in?</span><br>
   <INPUT TYPE="radio" NAME="logged" VALUE="y" onclick="radioClicked(this)">  Yes
   <INPUT TYPE="radio" NAME="logged" VALUE="n" checked onclick="radioClicked(this)">  No
+
 </div>
 
 <div id="main-menu-container">
@@ -38,31 +39,34 @@
 
     <div id="left-sidebar">
       <ul>
-        <li><a href="#/steam" class="game-button" onclick="choose_game(this,1)">
+        <li><a href="#/steam" class="game-button">
           <div>
           <img src="pic/games/steam.jpg" alt="Steam">
           <span>Steam Games</span></div></a></li>
-        <li><a href="#/dota" class="game-button" onclick="choose_game(this,2)">
+        <li><a href="#/dota" class="game-button">
           <img src="pic/games/dota2.jpg" alt="Dota 2">
           <span>Dota 2</span></a></li>
-        <li><a href="#/cs-go" class="game-button" onclick="choose_game(this,3)">
+        <li><a href="#/cs-go" class="game-button">
           <img src="pic/games/csgo.jpg" alt="CS:GO">
           <span>CS:GO</span></a></li>
-        <li><a href="#/tf" class="game-button" onclick="choose_game(this,4)">
+        <li><a href="#/tf" class="game-button">
           <img src="pic/games/tf2.jpg" alt="Team Fortress 2">
           <span>Team Fortress</span></a></li>
-        <li><a href="#/tf" class="game-button" onclick="choose_game(this,5)">
+        <li><a href="#/tf" class="game-button">
           <img src="pic/games/tf2.jpg" alt="Продать вещи">
           <span>Продать</span></a></li>
         <li>
-        <div id="my_profile"><a href="#/tf" class="game-button" onclick="choose_game(this,6)">
-          <img src="av.jpg" width="32" alt="Личный кабинет">
-          <span>Личный кабинет</span></a>
-        </div></li>
+          <div id="my-profile">
+            <a href="#/my" id="profile">
+              <img src="av.jpg" width="32" alt="Личный кабинет">
+              <span>Личный кабинет</span>
+            </a>
+          </div>
+        </li>
       </ul>      
     </div>
 
-  <div id="main" class="col">
+  <div id="main">
 
   </div>
 
@@ -108,7 +112,7 @@
     cache: false
   }); </script>
 <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-<script src="js/router.js"></script>
+<!--script src="js/router.js"></script-->
 <script src="js/script.js"></script>
 <script src="js/inventory.js"></script>
 <script src="js/game.js"></script>

@@ -31,7 +31,7 @@ $('#my-profile').click(function() {
 });
 
 function login () {
-	$.ajax( '/templates/login.html' ).then( function (template)  {
+	$.ajax( 'templates/login.html' ).then( function (template)  {
 	loginTemplate = template;
 	loginRactive = new Ractive({
 						  el: 'login',
@@ -58,7 +58,7 @@ function radioClicked ( a ) {
 };
 
 function withdraw () {
-	$.ajax( '/templates/withdrawTemplate.html' ).then( function (template)  {
+	$.ajax( 'templates/withdrawTemplate.html' ).then( function (template)  {
 		var withdrawTemplate = template;
 		main = new Ractive({
 						  el: 'main',
@@ -70,7 +70,7 @@ function withdraw () {
 }
 
 function deposit () {
-	$.ajax( '/templates/depositTemplate.html' ).then( function (template)  {
+	$.ajax( 'templates/depositTemplate.html' ).then( function (template)  {
 		var depositTemplate = template;
 		main = new Ractive({
 						  el: 'main',
@@ -87,7 +87,7 @@ function logout () {
 };
 
 function show_main () {
-	$.ajax( '/templates/mainTemplate.html' ).then( function (template)  {
+	$.ajax( 'templates/mainTemplate.html' ).then( function (template)  {
 		mainTemplate = template;
 		main = new Ractive({
 							  el: 'main',
@@ -99,7 +99,7 @@ function show_main () {
 }
 
 
-$.ajax( '/templates/rightSidebarTemplate.html' ).then( function (template)  {
+$.ajax( 'templates/rightSidebarTemplate.html' ).then( function (template)  {
 	rightSidebarTemplate = template;
 	right_sidebar = new Ractive({
 						  el: 'right_sidebar',

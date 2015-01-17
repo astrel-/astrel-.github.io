@@ -1,12 +1,12 @@
 <div class='inventory-main'>
   <div class= 'item-container'>
-    {{#items:i}}
+    {{#id:i}}
       {{#if (id[i])}}
-        <a href='' class='idlol' id={{id[i]}}>
-          <div class='item-holder' id={{id}}>
-            <img src='http://steamcommunity-a.akamaihd.net/economy/image/{{imageURL[i]}}'>
+        <a class='idlol' id={{keys[i]}} tag={{i}} onclick="showItem1( this )">
+          <div class='item-holder' id={{keys[i]}}>
+            <img src='http://steamcommunity-a.akamaihd.net/economy/image/{{images[i]}}'>
           </div>
-        </a>
+        </a>      
       {{else}}
         <div class="item-holder">
         </div>
@@ -18,7 +18,8 @@
   </div>
 
   <div class='item-description'>
-    <img src='http://steamcommunity-a.akamaihd.net/economy/image/{{activeItemURL}}'>
+    {{#with currentItem}}
+    <img src='http://steamcommunity-a.akamaihd.net/economy/image/{{imageURL}}'>
     <div id='item-title'>
       <p id='item-name'>{{name}}</p>
     </div>
@@ -42,6 +43,7 @@
       Вы не можете торговать этим предметом
       {{/if}}
     </div>
+    {{/with}}
   </div>
 </div>
 
@@ -79,8 +81,5 @@
         slot: '',
         hero: ''
       }
-
-W_I_5GLm4wPcv9jJQ7z7tz_l_0sEIYUhRfbF4arNQkgGQGKd3k…ITLNVgbmlM3dHqgUBHUXLVDeNFCtV4v8vB1gKnTV3Gr489uF4
-
 
       -->

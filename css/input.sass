@@ -23,13 +23,22 @@
 	background: white
 	border-style: dashed none dashed none
 	border-width: 1px
-	text-align: center
+	//text-align: center
 	display: inline-block
 	width: 998px
 	height: 25px
 	
 	span
 		padding-right: 10px
+
+#faq
+	width: 100px
+	text-align: center
+	float: left
+
+#about
+	@extend #faq
+
 
 .f-nav
 	z-index: 9999
@@ -121,6 +130,7 @@ header
 
 #profile
 	@extend .game-button
+	display: none
 
 //#my-profile:hover, #my-profile:visited, #my-profile:focus
 //	+no_link_decoration()
@@ -178,6 +188,10 @@ footer
 	//background-color: grey
 	img
 		width: 98px
+
+.idlol 
+	//display: block
+	cursor: pointer
 
 .item-description 
 	float: left

@@ -12,7 +12,8 @@ function showInventory() {
         console.log( data );
         //console.log( template[0] );
         inventoryRactive = makeRactive( "main", template[0], data);
-        //console.log( inventoryRactive );
+        console.log( "look here" );
+        console.log( inventoryRactive.data );
      });
 }
 

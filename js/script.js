@@ -35,6 +35,7 @@ $(function() {
 									data);
 	});
 
+	 showInventory();
 });
 	
 function fetchData() {

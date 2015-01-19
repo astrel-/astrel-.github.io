@@ -4,7 +4,7 @@ var inventoryRactive;
 
 
 
-showInventory();
+//showInventory();
 
 function showInventory() {
     $.when( fetchDataInventory(), $.ajax( "templates/inventoryTemplate.html" ))

@@ -18,7 +18,6 @@ function showInventory() {
      });
 }
 
-function showInventory
 
 
 function fetchDataInventory() {

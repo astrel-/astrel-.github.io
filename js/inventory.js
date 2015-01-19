@@ -12,8 +12,8 @@ function showInventory() {
         console.log( data );
         //console.log( template[0] );
         inventoryRactive = makeRactive( "main", template[0], data);
-        console.log( "look here" );
-        console.log( inventoryRactive.data );
+        console.log( "ractive created" );
+        //console.log( inventoryRactive.data );
      });
 }
 
@@ -48,7 +48,7 @@ function fetchDataInventory() {
         success: function ( dataJSON ) { 
             parse ( dataJSON, data, true ); 
             //showItem1(0);
-            console.log( dataJSON );
+            console.log( "json parsed" );
         }
     });
     return data;

@@ -9,8 +9,9 @@ showInventory();
 function showInventory() {
     $.when( fetchDataInventory(), $.ajax( "templates/inventoryTemplate.html" ))
      .then(function( data, template ) {
+        console.log( "data, template" );
         console.log( data );
-        //console.log( template[0] );
+        console.log( template[0] );
         inventoryRactive = makeRactive( "main", template[0], data);
         console.log( "ractive created" );
         //console.log( inventoryRactive.data );

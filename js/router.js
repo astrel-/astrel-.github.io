@@ -1,30 +1,30 @@
-var steam = function () { console.log("steam");};
-var dota = function () { console.log("dota");};
-var cs_go = function () { console.log("cs-go");};
-var tf = function () {console.log("tf");};
-
-var routes = {
-	'/steam': steam,
-	'/dota': dota,
-	'/cs-go': cs_go,
-	'/tf': tf
+/*window.App = {
+	Views: {},
+	Models: {},
+	Collections: {},
+	Router: {}
 };
+*/
 
+var Workspace = Backbone.Router.extend({
 
-var author = function () { console.log("author"); };
-var books = function () { console.log("books"); };
-var viewBook = function (bookId) {
-console.log("viewBook: bookId is populated: " + bookId);
-};
+	routes: {
+		"steam": "steam",
+		"dota2": "dota2",
+		"cs-go": "csgo"
+	},
 
-var routes1 = {
-'/author': author,
-'/books': [books, function() {
-  console.log("An inline route handler.");
-}],
-'/books/view/:bookId': viewBook
-};
+	steam: function() {
+		console.log( "steam" );
+	},
 
-var router = Router(routes);
+	dota2: function() {
+		console.log( "dota 2" );
+	},
 
-router.init();
+	csgo: function() {
+		console.log( "cs-go" );
+	}
+});
+
+Backbone.history.start()

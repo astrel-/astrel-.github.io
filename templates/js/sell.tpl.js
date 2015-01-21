@@ -1,3 +1,3 @@
 Ember.TEMPLATES["sell"] = Ember.Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  return "";
-},"useData":true});
+  data.buffer.push("<p>Sell</p>");
+  },"useData":true});

@@ -16,12 +16,12 @@ $(function() {
 	        }
 	    });
 
-    $( ".game-button" )
+    /*$( ".game-button" )
     	.click(function() {
 			var index = $( ".game-button" ).index( this ) + 1;
 			console.log( index );
 			choose_game( this, index );
-		});
+		});*/
 
     $( "#profile" )
     	.click(function() {

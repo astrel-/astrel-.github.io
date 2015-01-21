@@ -1,27 +1,41 @@
-<div id="debug">
+<!--div id="debug">
   <span>Logged in?</span><br>
-  <INPUT TYPE="radio" NAME="logged" VALUE="y" onclick="radioClicked(this)">  Yes
-  <INPUT TYPE="radio" NAME="logged" VALUE="n" checked onclick="radioClicked(this)">  No
-
-</div>
+  <INPUT TYPE="radio" NAME="signedIn" VALUE="y"> Yes
+  <INPUT TYPE="radio" NAME="signedIn" VALUE="n" checked>  No
+</div-->
 
 <div id="main-menu-container">
   <header>
     {{#link-to 'application' class="title"}}
-    <!--a href="/" class="title"-->
       <div id="title">
         <h2>YBARRA</h2>
       </div>
-      <!--/a-->
       {{/link-to}}
 
   </header>
 
   <div id="login" class>
-  {{outlet-login}}
+  
+  {{#if name}}
+    <div id='userbar'>
+      <a href>{{name}}</a> {{money}} <a href><span><font size=1>(выход)</font></span></a>
+    </div>
+  {{else}}
+    <div id="faq">
+      {{#link-to 'faq'}}
+        <span>FAQ</span>
+      {{/link-to}}
+      </a>
+    </div>
+    <div id="about">
+      {{#link-to 'about'}}
+        <span>О проекте</span>
+      {{/link-to}}
+    </div>
     <div id="steam-log-in">
       <a href="html/index_en.html"><img src="pic/sits_small.png"></a>
     </div>
+{{/if}}
   </div>
 
   <div id="container">
@@ -43,6 +57,7 @@
         <li>{{#link-to 'sell' class="game-button"}}
           <img src="pic/games/tf2.jpg" alt="Продать вещи">
           <span>Продать</span>{{/link-to}}</li>
+          {{#if name}}
         <li>
           <div id="my-profile">
             <a href="#/my" id="profile">
@@ -51,10 +66,12 @@
             </a>
           </div>
         </li>
+        {{/if}}
       </ul>      
     </div>
 
   <div id="main">
+
 {{outlet}}
   </div>
 

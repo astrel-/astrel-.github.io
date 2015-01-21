@@ -22,19 +22,19 @@ $(function() {
 			console.log( index );
 			choose_game( this, index );
 		});*/
-
+/*
     $( "#profile" )
     	.click(function() {
 			showProfile();
-		});
-
+		});*/
+/*
 	$.when( fetchData(), $.get( "templates/loginTemplate.html" )  )
 	 .then(function( data, template ) {
 		loginRactive = makeRactive( "login",
 									template[0],
 									data);
 	});
-
+*/
 	// showInventory();
 });
 	
@@ -63,12 +63,10 @@ function makeRactive( el, template, data ) {
 //For debugging 
 function radioClicked ( a ) {
 	if ( a.value == 'y' ) {
-		loginRactive.set( 'signedIn', true );
-		$( "#profile" ).show(); 
+		loginRactive.set( 'signedIn', true ); 
 	}
 	else {
 		loginRactive.set( 'signedIn', false);
-		$( "#profile" ).hide();
 	}
 };
 

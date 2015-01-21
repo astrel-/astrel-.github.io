@@ -20,9 +20,11 @@ module.exports = function(grunt) {
 	      "templates/js/application.tpl.js": "templates/hbs/application.hbs",
 	      "templates/js/steam.tpl.js": 		 "templates/hbs/steam.hbs",
 	      "templates/js/dota.tpl.js":        "templates/hbs/dota.hbs",
-	      "templates/js/cs-go.tpl.js": "templates/hbs/cs-go.hbs",
-	      "templates/js/tf.tpl.js": "templates/hbs/tf.hbs",
-	      "templates/js/sell.tpl.js": "templates/hbs/sell.hbs"
+	      "templates/js/cs-go.tpl.js": 		 "templates/hbs/cs-go.hbs",
+	      "templates/js/tf.tpl.js": 		 "templates/hbs/tf.hbs",
+	      "templates/js/sell.tpl.js": 		 "templates/hbs/sell.hbs",
+  	      "templates/js/faq.tpl.js": 		 "templates/hbs/faq.hbs",
+  	      "templates/js/about.tpl.js": 		 "templates/hbs/about.hbs"
 	    }
 	  }
 	},

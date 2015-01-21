@@ -42,7 +42,7 @@ function fetchData() {
 	var data = { 
 		signedIn: false,
 		user: {
-			pic: 'av.jpg',
+			pic: "pic/av.jpg",
 		 	name: 'Bubalus',
 		 	money: 900
 		}

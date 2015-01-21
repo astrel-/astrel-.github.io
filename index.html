@@ -3,100 +3,23 @@
 <!-- TODO: meta -->
 <meta name="" http-equiv="content-type" content="text/html" property="">
 <title>Ybarra</title>
-<link rel="stylesheet" href="css/output.css" content="text/css">
+<link rel="stylesheet" href="css/style.css" content="text/css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="shortcut icon" href="pic/favicon.ico">
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
 <script src="//cdn.ractivejs.org/latest/ractive.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="//underscorejs.org/underscore-min.js"></script>
-<script src="//backbonejs.org/backbone-min.js"></script>
-<div id="debug">
-  <span>Logged in?</span><br>
-  <INPUT TYPE="radio" NAME="logged" VALUE="y" onclick="radioClicked(this)">  Yes
-  <INPUT TYPE="radio" NAME="logged" VALUE="n" checked onclick="radioClicked(this)">  No
-
-</div>
-
-<div id="main-menu-container">
-  <header>
-    <a href="/" class="title">
-      <div id="title">
-        <h2>YBARRA</h2>
-      </div>
-    </a>
-  </header>
-
-  <div id="login" class>
-    <div id="steam-log-in">
-      <a href="html/index_en.html"><img src="pic/sits_small.png"></a>
-    </div>
-  </div>
-
-  <div id="container">
-
-    <div id="left-sidebar">
-      <ul>
-        <li><a href="#/steam" class="game-button">
-          <img src="pic/games/steam.jpg" alt="Steam">
-          <span>Steam Games</span></a></li>
-        <li><a href="#/dota" class="game-button">
-          <img src="pic/games/dota2.jpg" alt="Dota 2">
-          <span>Dota 2</span></a></li>
-        <li><a href="#/cs-go" class="game-button">
-          <img src="pic/games/csgo.jpg" alt="CS:GO">
-          <span>CS:GO</span></a></li>
-        <li><a href="#/tf" class="game-button">
-          <img src="pic/games/tf2.jpg" alt="Team Fortress 2">
-          <span>Team Fortress</span></a></li>
-        <li><a href="#/tf" class="game-button">
-          <img src="pic/games/tf2.jpg" alt="Продать вещи">
-          <span>Продать</span></a></li>
-        <li>
-          <div id="my-profile">
-            <a href="#/my" id="profile">
-              <img src="av.jpg" width="32" alt="Личный кабинет">
-              <span>Личный кабинет</span>
-            </a>
-          </div>
-        </li>
-      </ul>      
-    </div>
-
-  <div id="main">
-
-  </div>
-
-  </div>
-
-  <!--footer>
-    <div id="rules">
-      <a href="" class="rules">Правила Пользования</a>
-    </div>
-  </footer-->
-</div>
+<script src="js/libs/handlebars-v2.0.0.js"></script>
+<script src="js/libs/ember.min.js"></script>
+<script src="js/app.js"></script>
+<!--script src="js/script.js"></script-->
+<script src="templates/js/application.tpl.js"></script>
+<script src="templates/js/steam.tpl.js"></script>
+<script src="templates/js/dota.tpl.js"></script>
 
 
 
 
-
-
-<!--div id="container">
-  
- 
-
-  <div id="main">
-
-  </div>
-  
-  <div id="right_sidebar">
-
-  </div>
-
-
-</div>
-</div>
-</div-->
 
 
 
@@ -107,9 +30,8 @@
 <script>
   $.ajaxSetup({
     cache: false
-  }); </script>
-<script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-<script src="js/router.js"></script>
-<script src="js/script.js"></script>
-<script src="js/inventory.js"></script>
-<script src="js/game.js"></script>
+  }); 
+</script>
+
+
+

@@ -1,0 +1,68 @@
+<div id="debug">
+  <span>Logged in?</span><br>
+  <INPUT TYPE="radio" NAME="logged" VALUE="y" onclick="radioClicked(this)">  Yes
+  <INPUT TYPE="radio" NAME="logged" VALUE="n" checked onclick="radioClicked(this)">  No
+
+</div>
+
+<div id="main-menu-container">
+  <header>
+    {{#link-to 'application' class="title"}}
+    <!--a href="/" class="title"-->
+      <div id="title">
+        <h2>YBARRA</h2>
+      </div>
+      <!--/a-->
+      {{/link-to}}
+
+  </header>
+
+  <div id="login" class>
+    <div id="steam-log-in">
+      <a href="html/index_en.html"><img src="pic/sits_small.png"></a>
+    </div>
+  </div>
+
+  <div id="container">
+
+    <div id="left-sidebar">
+      <ul>
+        <li>{{#link-to 'steam' class="game-button"}}
+          <img src="pic/games/steam.jpg" alt="Steam">
+          <span>Steam Games</span>{{/link-to}}</li>
+        <li>{{#link-to 'dota' class="game-button"}}
+          <img src="pic/games/dota2.jpg" alt="Dota 2">
+          <span>Dota 2</span>{{/link-to}}</li>
+        <li><a href="#/cs-go" class="game-button">
+          <img src="pic/games/csgo.jpg" alt="CS:GO">
+          <span>CS:GO</span></a></li>
+        <li><a href="#/tf" class="game-button">
+          <img src="pic/games/tf2.jpg" alt="Team Fortress 2">
+          <span>Team Fortress</span></a></li>
+        <li><a href="#/tf" class="game-button">
+          <img src="pic/games/tf2.jpg" alt="Продать вещи">
+          <span>Продать</span></a></li>
+        <li>
+          <div id="my-profile">
+            <a href="#/my" id="profile">
+              <img src="pic/av.jpg" width="32" alt="Личный кабинет">
+              <span>Личный кабинет</span>
+            </a>
+          </div>
+        </li>
+      </ul>      
+    </div>
+
+  <div id="main">
+{{outlet}}
+  </div>
+
+  </div>
+
+  <!--footer>
+    <div id="rules">
+      <a href="" class="rules">Правила Пользования</a>
+    </div>
+  </footer-->
+</div>
+

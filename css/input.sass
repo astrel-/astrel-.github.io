@@ -88,6 +88,10 @@ header
 		padding: 5px
 		text-align: left
 		list-style-type: none
+		li
+			.active
+				border-style: solid
+				border-width: 1px
 		li:hover 
 			border-style: solid
 			border-width: 1px
@@ -122,19 +126,9 @@ header
 .game-button:hover, .game-button:visited, .game-button:focus 
 	+no_link_decoration()
 
-
-.active-game-button 
-	//background-cSDFolor: #333366
-	border-style: solid
-	border-width: 1px
-
 #profile
 	@extend .game-button
 	display: none
-
-//#my-profile:hover, #my-profile:visited, #my-profile:focus
-//	+no_link_decoration()
-
 
 #main
 	float: left

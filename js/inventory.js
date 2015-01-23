@@ -1,4 +1,3 @@
-var numberOfElementsPerPage = 20;
 var inventoryTemplate;
 var inventoryRactive;
 
@@ -21,29 +20,6 @@ function showInventory() {
 
 
 function fetchDataInventory() {
-    var data = { 
-        currentPage: 1,
-        keys: new Array( numberOfElementsPerPage ),
-        id: new Array( numberOfElementsPerPage ),
-        images: new Array( numberOfElementsPerPage ),
-        currentItem: {
-            imageURL: '',
-            appid: '',
-            name: '',
-            marketable: 1,
-            tradable: 1,
-            type: '',
-            description: '',
-            tags: {
-                quality: '',
-                rarity: '',
-                type: '',
-                slot: '',
-                hero: ''
-            }
-        }
-    };
-
     $.ajax({
         dataType: "json",
         url: 'json/csgo.json',

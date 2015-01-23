@@ -1,1 +1,26 @@
-<p>Sell</p>
+<div class='inventory-main'>
+  <div class= 'item-container'>
+    {{#each item in items}}
+      <div {{bind-attr class=":item-holder key"}}>
+        <a {{bind-attr class=":idlol key"}}>
+          {{#if item}}
+            <img src="{{unbound item.image}}" class="item-image">
+	           <!--img src="pic/ajax-loader.gif" alt="loading" class="loading-gif"-->
+          {{/if}}
+        </a>  
+      </div>
+    
+
+    {{/each}}
+
+    previous
+    next
+
+
+  </div>
+
+  <div class='item-description'>
+    {{outlet}}
+  </div>
+
+</div>

@@ -1,8 +1,10 @@
-<!--div id="debug">
-  <span>Logged in?</span><br>
-  <INPUT TYPE="radio" NAME="signedIn" VALUE="y"> Yes
-  <INPUT TYPE="radio" NAME="signedIn" VALUE="n" checked>  No
-</div-->
+<div id="debug">
+  {{#if name}}
+  <button {{action 'logOut'}}>Log Out</button>
+  {{else}}
+  <button {{action 'logIn'}}>Log In</button>
+  {{/if}}
+</div>
 
 <div id="main-menu-container">
   <header>

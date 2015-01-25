@@ -7,16 +7,11 @@ App.Router.map(function() {
 	this.resource( "cs-go" );
 	this.resource( "tf" );
 
-	//this.resource( "sell", function() {
-      //  this.resource( "sell-page", { path: ":page"});
-    //});
     //this.resource( "sell", {path: ":page" });
-    this.resource( "sell", { path: "/sell/:game/:page"} ); 
-   // this.resource( "sell", function() {
-     //   this.resource( "sells", {path: ":game/:page"});
-    //});
+    this.resource( "sell", function() {
+        this.resource( "sellgame", {path: "/:game/:page"});
+    }); 
 
-	//nav
 	this.resource( "faq" );
 	this.resource( "about" );
 });
@@ -120,14 +115,14 @@ function parse( dataJSON, currentPage ) {
 
 //
 
-App.SellRoute = Ember.Route.extend({
+App.SellgameRoute = Ember.Route.extend({
     model: function( params ) {
         console.log( params.page );
         var jsonURL = "";
-        if ( params.game = "dota") {
+        if ( params.game == "dota") {
             jsonURL = "json/dota2.json";
         }
-        else if ( params.game = "cs-go" ){
+        else if ( params.game == "cs-go" ){
             jsonURL = "json/csgo.json";
         }
         else { 
@@ -142,18 +137,22 @@ App.SellRoute = Ember.Route.extend({
             else data.previousPage = null;
             if ( data.currentPage < data.pages ) data.nextPage = data.currentPage + 1;
             else data.nextPage = null;
+            data.game = params.game;
+            data.jsonURL = jsonURL;
             return data;
         });
     }
 });
 
-App.SellController = Ember.ObjectController.extend({
+
+
+App.SellgameController = Ember.ObjectController.extend({
     actions: {
         next: function() {
             var model = this.get( "model" );
             console.log(model);
             model.currentPage = 2;
-            $.getJSON( "json/csgo.json" ).then( function( dataJSON ) {
+            $.getJSON( model.jsonURL ).then( function( dataJSON ) {
                 var data = parse( dataJSON, model.currentPage );
                 //$.extend(data, {currentPage: 2);
                 model = data;

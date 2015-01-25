@@ -23,6 +23,7 @@ module.exports = function(grunt) {
 	      "templates/js/cs-go.tpl.js": 		 "templates/hbs/cs-go.hbs",
 	      "templates/js/tf.tpl.js": 		 "templates/hbs/tf.hbs",
 	      "templates/js/sell.tpl.js": 		 "templates/hbs/sell.hbs",
+	      "templates/js/sellgame.tpl.js":   "templates/hbs/sellgame.hbs",
   	      "templates/js/faq.tpl.js": 		 "templates/hbs/faq.hbs",
   	      "templates/js/about.tpl.js": 		 "templates/hbs/about.hbs"
 	    }

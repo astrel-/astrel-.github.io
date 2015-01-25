@@ -12,6 +12,9 @@ App.Router.map(function() {
     //});
     //this.resource( "sell", {path: ":page" });
     this.resource( "sell", { path: "/sell/:game/:page"} ); 
+   // this.resource( "sell", function() {
+     //   this.resource( "sells", {path: ":game/:page"});
+    //});
 
 	//nav
 	this.resource( "faq" );
@@ -120,7 +123,18 @@ function parse( dataJSON, currentPage ) {
 App.SellRoute = Ember.Route.extend({
     model: function( params ) {
         console.log( params.page );
-        return $.getJSON( "json/csgo.json" ).then( function( dataJSON ) {
+        var jsonURL = "";
+        if ( params.game = "dota") {
+            jsonURL = "json/dota2.json";
+        }
+        else if ( params.game = "cs-go" ){
+            jsonURL = "json/csgo.json";
+        }
+        else { 
+            jsonURL = "json/steam.json";
+        }
+        console.log(params);
+        return $.getJSON( jsonURL ).then( function( dataJSON ) {
             var data = {currentPage: parseInt(params.page)};
           //  var data = parse( dataJSON, currentPage );
             $.extend(data, parse( dataJSON, data.currentPage ) );

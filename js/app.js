@@ -6,7 +6,12 @@ App.Router.map(function() {
 	this.resource( "dota" );
 	this.resource( "cs-go" );
 	this.resource( "tf" );
-	this.resource( "sell" );
+
+	//this.resource( "sell", function() {
+      //  this.resource( "sell-page", { path: ":page"});
+    //});
+    //this.resource( "sell", {path: ":page" });
+    this.resource( "sell", { path: "/sell/:page"} ); 
 
 	//nav
 	this.resource( "faq" );
@@ -83,11 +88,13 @@ function initData() {
 
 
 
-function parse( dataJSON, onload ) {
-    //onload = onload || false;
+function parse( dataJSON, currentPage ) {
     var data = {items:[]};
     console.log( dataJSON.rgDescriptions );
-    var keys = _.first( _.keys( dataJSON.rgDescriptions ), 20 );
+    var keys = _.keys( dataJSON.rgDescriptions )
+    var numberOfItems = keys.length;
+    data.pages = Math.floor((numberOfItems-1)/20)+1 || 1;
+    keys = keys.slice(20*(currentPage-1),20*currentPage);
     _.each(keys, createItem);
     
     function createItem( id ) {
@@ -98,8 +105,9 @@ function parse( dataJSON, onload ) {
         data.items.push(item);
     }
 
+    //if (currentPage = data.pages)
     var n = 20 - data.items.length;
-    if ( n != 0 ) {
+    if ( n > 0 ) {
         data.items.push.apply(data.items, _.range(n).map(function() {return null;}))
     }
 
@@ -110,21 +118,33 @@ function parse( dataJSON, onload ) {
 //
 
 App.SellRoute = Ember.Route.extend({
-    model: function() {
-        var currentPage = 1;
-        var is = _.range( 20 );
-        var initData = {
-            currentPage: currentPage,
-            is: is
-        };
-        return $.getJSON( "json/dota2.json" ).then( function( dataJSON ) {
-            //console.log( dataJSON );
-            var data = parse( dataJSON, true );
-            $.extend(data, initData);
+    model: function( params ) {
+        console.log( params.page );
+        return $.getJSON( "json/csgo.json" ).then( function( dataJSON ) {
+            var data = {currentPage: parseInt(params.page)};
+          //  var data = parse( dataJSON, currentPage );
+            $.extend(data, parse( dataJSON, data.currentPage ) );
+            if ( data.currentPage > 1 ) data.previousPage = data.currentPage - 1;
+            else data.previousPage = null;
+            if ( data.currentPage < data.pages ) data.nextPage = data.currentPage + 1;
+            else data.nextPage = null;
             return data;
         });
-
     }
 });
 
+App.SellController = Ember.ObjectController.extend({
+    actions: {
+        next: function() {
+            var model = this.get( "model" );
+            console.log(model);
+            model.currentPage = 2;
+            $.getJSON( "json/csgo.json" ).then( function( dataJSON ) {
+                var data = parse( dataJSON, model.currentPage );
+                //$.extend(data, {currentPage: 2);
+                model = data;
+            });
+        }
+    }
+});
 

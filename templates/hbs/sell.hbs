@@ -13,8 +13,12 @@
 
     {{/each}}
 
-    previous
-    next
+    {{#link-to 'sell' previousPage}}Previous{{/link-to}}
+    <span>Страница 
+    {{currentPage}}
+     из {{pages}}</span>
+       {{#link-to 'sell' nextPage}}Next{{/link-to}}
+
 
 
   </div>

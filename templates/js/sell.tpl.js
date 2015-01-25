@@ -19,12 +19,28 @@ Ember.TEMPLATES["sell"] = Ember.Handlebars.template({"1":function(depth0,helpers
   data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "item.image", {"name":"unbound","hash":{},"hashTypes":{},"hashContexts":{},"types":["ID"],"contexts":[depth0],"data":data})));
   data.buffer.push("\" class=\"item-image\">\n	           <!--img src=\"pic/ajax-loader.gif\" alt=\"loading\" class=\"loading-gif\"-->\n");
   return buffer;
-},"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  var stack1, buffer = '';
+},"4":function(depth0,helpers,partials,data) {
+  data.buffer.push("Previous");
+  },"6":function(depth0,helpers,partials,data) {
+  data.buffer.push("Next");
+  },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+  var stack1, helperMissing=helpers.helperMissing, buffer = '';
   data.buffer.push("<div class='inventory-main'>\n  <div class= 'item-container'>\n");
   stack1 = helpers.each.call(depth0, "item", "in", "items", {"name":"each","hash":{},"hashTypes":{},"hashContexts":{},"fn":this.program(1, data),"inverse":this.noop,"types":["ID","ID","ID"],"contexts":[depth0,depth0,depth0],"data":data});
   if (stack1 != null) { data.buffer.push(stack1); }
-  data.buffer.push("\n    previous\n    next\n\n\n  </div>\n\n  <div class='item-description'>\n    ");
+  data.buffer.push("\n    ");
+  stack1 = ((helpers['link-to'] || (depth0 && depth0['link-to']) || helperMissing).call(depth0, "sell", "previousPage", {"name":"link-to","hash":{},"hashTypes":{},"hashContexts":{},"fn":this.program(4, data),"inverse":this.noop,"types":["STRING","ID"],"contexts":[depth0,depth0],"data":data}));
+  if (stack1 != null) { data.buffer.push(stack1); }
+  data.buffer.push("\n    <span>Страница \n    ");
+  stack1 = helpers._triageMustache.call(depth0, "currentPage", {"name":"_triageMustache","hash":{},"hashTypes":{},"hashContexts":{},"types":["ID"],"contexts":[depth0],"data":data});
+  if (stack1 != null) { data.buffer.push(stack1); }
+  data.buffer.push("\n     из ");
+  stack1 = helpers._triageMustache.call(depth0, "pages", {"name":"_triageMustache","hash":{},"hashTypes":{},"hashContexts":{},"types":["ID"],"contexts":[depth0],"data":data});
+  if (stack1 != null) { data.buffer.push(stack1); }
+  data.buffer.push("</span>\n       ");
+  stack1 = ((helpers['link-to'] || (depth0 && depth0['link-to']) || helperMissing).call(depth0, "sell", "nextPage", {"name":"link-to","hash":{},"hashTypes":{},"hashContexts":{},"fn":this.program(6, data),"inverse":this.noop,"types":["STRING","ID"],"contexts":[depth0,depth0],"data":data}));
+  if (stack1 != null) { data.buffer.push(stack1); }
+  data.buffer.push("\n\n\n\n  </div>\n\n  <div class='item-description'>\n    ");
   stack1 = helpers._triageMustache.call(depth0, "outlet", {"name":"_triageMustache","hash":{},"hashTypes":{},"hashContexts":{},"types":["ID"],"contexts":[depth0],"data":data});
   if (stack1 != null) { data.buffer.push(stack1); }
   data.buffer.push("\n  </div>\n\n</div>");

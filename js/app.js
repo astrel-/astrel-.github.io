@@ -11,7 +11,7 @@ App.Router.map(function() {
       //  this.resource( "sell-page", { path: ":page"});
     //});
     //this.resource( "sell", {path: ":page" });
-    this.resource( "sell", { path: "/sell/:page"} ); 
+    this.resource( "sell", { path: "/sell/:game/:page"} ); 
 
 	//nav
 	this.resource( "faq" );
@@ -25,10 +25,10 @@ App.ApplicationController = Ember.Controller.extend({
 	money: null,
 	actions: {
 		logIn: function(){
-			controller.set("model")
+			
 			//console.log("Logged in");
-			//this.set("name", "Bubalus");
-			//this.set("money", 900);
+			this.set("name", "Bubalus");
+			this.set("money", 900);
 		},
 		logOut :function() {
 			//console.log("Logged out");

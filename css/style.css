@@ -135,6 +135,21 @@ footer {
   width: 100%;
   height: 1000px; }
 
+nav {
+  width: 100%;
+  display: inline-block;
+  clear: both; }
+  nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; }
+    nav ul li {
+      display: inline; }
+
+.game-nav {
+  margin: 0;
+  width: 100px; }
+
 .item-container {
   float: left;
   width: 515px;

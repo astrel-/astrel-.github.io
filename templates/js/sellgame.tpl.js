@@ -29,8 +29,8 @@ Ember.TEMPLATES["sellgame"] = Ember.Handlebars.template({"1":function(depth0,hel
   data.buffer.push("Last");
   },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
   var stack1, helperMissing=helpers.helperMissing, buffer = '';
-  data.buffer.push("  <div class= 'item-container'>\n");
-  stack1 = helpers.each.call(depth0, "item", "in", "items", {"name":"each","hash":{},"hashTypes":{},"hashContexts":{},"fn":this.program(1, data),"inverse":this.noop,"types":["ID","ID","ID"],"contexts":[depth0,depth0,depth0],"data":data});
+  data.buffer.push("  <div class= 'item-container'>\n\n\n");
+  stack1 = helpers.each.call(depth0, "item", "in", "itemsPage", {"name":"each","hash":{},"hashTypes":{},"hashContexts":{},"fn":this.program(1, data),"inverse":this.noop,"types":["ID","ID","ID"],"contexts":[depth0,depth0,depth0],"data":data});
   if (stack1 != null) { data.buffer.push(stack1); }
   data.buffer.push("\n    ");
   stack1 = ((helpers['link-to'] || (depth0 && depth0['link-to']) || helperMissing).call(depth0, "sellgame", "game", 1, {"name":"link-to","hash":{},"hashTypes":{},"hashContexts":{},"fn":this.program(4, data),"inverse":this.noop,"types":["STRING","ID","NUMBER"],"contexts":[depth0,depth0,depth0],"data":data}));

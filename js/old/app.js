@@ -55,6 +55,8 @@ App.ApplicationController = Ember.Controller.extend({
 });
 
 
+
+
 /**SELL*/
 
 
@@ -117,73 +119,7 @@ function parse( dataJSON ) {
     return data;
 }
 
-//Item Object
-
-App.Item = Ember.Object.extend({
-    id: null,
-    imgURL: "",
-    image: function(  ){
-        imageURL = "http://steamcommunity-a.akamaihd.net/economy/image/" + 
-            this.get('imgURL');
-        return imageURL;
-    }.property( 'imgURL' )
-});
-
-var item = App.Item.create({
-    id: 1,
-    imgURL: "hello"
-});
-
-console.log(item.get('image'));
-
 //WORKS
-
-App.SellRoute = Ember.Route.extend({
-    model: function() {
-        var data = {
-            dota: {},
-            csgo: {},
-            steam: {}
-        };
-        return data;
-    } 
-});
-
-App.SellgameRoute = Ember.Route.extend({
-    model: function( params ) {
-        var model;
-        if ( params.game == "dota") {
-            model = this.modelFor( 'sell' ).dota;
-            if ( $.isEmptyObject( model ) ) {
-                model.needsUpdate = true;
-                model.jsonURL = "json/dota2.json";
-            }
-        }
-        else if ( params.game == "cs-go" ){
-            model = this.modelFor( 'sell' ).csgo;
-            if ( $.isEmptyObject( model ) ) {
-                model.needsUpdate = true;
-                model.jsonURL = "json/csgo.json";
-            }
-        }
-        else { 
-            model = this.modelFor( 'sell' ).steam;
-            if ( $.isEmptyObject( model ) ) {
-                model.needsUpdate = true;
-                model.jsonURL = "json/steam.json";
-            }
-        }
-
-        if ( model.needsUpdate ) {
-            //Updating whole Sell Model 
-            model.needsUpdate = false;
-        }
-        else {
-            //Getting list of items from Sell Model
-        }
-        return model;
-    }
-});
 /*
 App.SellgameRoute = Ember.Route.extend({
     model: function( params ) {
@@ -217,5 +153,91 @@ App.SellgameRoute = Ember.Route.extend({
             return data;
         });
     }
+});*/
+
+/*
+
+App.SellRoute = Ember.Route.extend({
+    model: function( controller, model ) {
+        var data = { 
+            dota: "",
+            csgo: "",
+            steam: "" 
+        };
+        console.log("model updated");
+        return data;
+    }
+});
+
+App.SellgameRoute = Ember.Route.extend({
+    model: function (params) {
+        var sellModel = this.controllerFor( "sell" ).get( "model" );
+
+        if (sellModel.dota)
+            return sellModel.dota;
+        else {
+           // App.SellgameController.set("itemsUpdated", true);
+            var jsonURL = "";
+            if ( params.game == "dota") {
+                jsonURL = "json/dota2.json";
+            }
+            else if ( params.game == "cs-go" ){
+                jsonURL = "json/csgo.json";
+            }
+            else { 
+                jsonURL = "json/steam.json";
+            }
+            console.log(params);
+            return $.getJSON( jsonURL ).then( function( dataJSON ) {
+                var data = {currentPage: parseInt(params.page)};
+              //  var data = parse( dataJSON, currentPage );
+                $.extend(data, parse( dataJSON ) );
+                data.itemsPage = data.items[data.currentPage-1];
+                if ( data.currentPage > 1 ) 
+                    data.previousPage = data.currentPage - 1;
+                else 
+                    data.previousPage = null;
+                if ( data.currentPage < data.pages ) 
+                    data.nextPage = data.currentPage + 1;
+                else 
+                    data.nextPage = null;
+                data.game = params.game;
+                data.jsonURL = jsonURL;
+
+
+                return data;
+            });
+
+        }
+    }
+
+});
+
+App.SellController = Ember.ObjectController.extend({
+    itemsUpdated: false
+});
+
+App.SellgameController = Ember.ObjectController.extend({
+    needs: "sell"
 });
 */
+
+App.ApplicationAdapter = DS.FixtureAdapter.extend();
+
+App.Todo = DS.Model.extend({
+  title: DS.attr('string'),
+  isCompleted: DS.attr('boolean')
+});
+
+App.ApplicationRoute = Ember.Route.extend({
+    model: function() {
+        return this.store.find( 'todo' )
+    }
+});
+
+/*
+App.SellRoute = Ember.Route.extend({
+    model: function
+});*/
+
+

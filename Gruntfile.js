@@ -2,6 +2,13 @@ module.exports = function(grunt) {
    // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    coffee: {
+    	compile: {
+    		files: {
+    			"js/1.js": "js/coffee/1.coffee"
+    		}
+    	}
+    },
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
@@ -40,6 +47,10 @@ module.exports = function(grunt) {
 		}
 	},
 	watch: {
+		coffee: {
+			files: ['js/coffee/*.coffee'],
+			tasks: 'coffee'
+		},
 		emberTemplates: {
 			files: "templates/hbs/*.hbs",
 			tasks: ["emberTemplates"]
@@ -57,10 +68,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-ember-templates');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-localserver');
+  grunt.loadNpmTasks('grunt-contrib-coffee');
 
   // Default task(s).
   grunt.registerTask('default', ["watch"]);
-  grunt.registerTask('deploy', ["uglify"]);
+  //grunt.registerTask('coffee', ["coffee"]);
  
 };

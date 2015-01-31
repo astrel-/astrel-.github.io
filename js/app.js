@@ -122,19 +122,18 @@ function parse( dataJSON ) {
 App.Item = Ember.Object.extend({
     id: null,
     imgURL: "",
-    image: function(  ){
-        imageURL = "http://steamcommunity-a.akamaihd.net/economy/image/" + 
-            this.get('imgURL');
-        return imageURL;
-    }.property( 'imgURL' )
+    init: function (imgURL) {
+        this.image = "http://steamcommunity-a.akamaihd.net/economy/image/" +
+            this.imgURL;
+    }
 });
 
 var item = App.Item.create({
     id: 1,
-    imgURL: "hello"
+    imgURL: "hellosjgioi"
 });
 
-console.log(item.get('image'));
+console.log(item.image);
 
 //WORKS
 

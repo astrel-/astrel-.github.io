@@ -5,7 +5,9 @@ module.exports = function(grunt) {
     coffee: {
     	compile: {
     		files: {
-    			"js/1.js": "js/coffee/1.coffee"
+    			"js/app.js": "js/coffee/app.coffee",
+    			"js/login.js": "js/coffee/login.coffee",
+    			"js/itemObject.js": "js/coffee/itemObject.coffee",
     		}
     	}
     },

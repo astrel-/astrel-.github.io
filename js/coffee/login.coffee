@@ -3,11 +3,11 @@ App.ApplicationController = Ember.Controller.extend(
 	money: null
 	actions: 
 		logIn: ->
-			this.set("name", "Bubalus")
-			this.set("money", 900)
+			@set("name", "Bubalus")
+			@set("money", 900)
 			return
 		logOut: -> 
-			this.set("name", null)
-			this.set("money", null)
+			@set("name", null)
+			@set("money", null)
 			return
 )

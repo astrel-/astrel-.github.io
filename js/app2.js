@@ -57,7 +57,7 @@ function initData() {
 }
 
 
-
+/*
 function parse( dataJSON ) {
     var data = {items:[]};
     var items = [];
@@ -99,7 +99,7 @@ function parse( dataJSON ) {
 
 //    console.log(data);
     return data;
-}
+}*/
 
 //Item Object
 /*
@@ -127,7 +127,7 @@ App.SellRoute = Ember.Route.extend({
         return data;
     } 
 });
-
+/*STAY
 App.SellgameRoute = Ember.Route.extend({
     model: function( params ) {
         var model;
@@ -162,8 +162,8 @@ App.SellgameRoute = Ember.Route.extend({
         }
         return model;
     }
-});
-/*
+});*/
+
 App.SellgameRoute = Ember.Route.extend({
     model: function( params ) {
         //console.log( params.page );
@@ -181,7 +181,8 @@ App.SellgameRoute = Ember.Route.extend({
         return $.getJSON( jsonURL ).then( function( dataJSON ) {
             var data = {currentPage: parseInt(params.page)};
           //  var data = parse( dataJSON, currentPage );
-            $.extend(data, parse( dataJSON ) );
+            $.extend(data, App.parse( dataJSON ) );
+            console.log( data );
             data.itemsPage = data.items[data.currentPage-1];
             if ( data.currentPage > 1 ) 
                 data.previousPage = data.currentPage - 1;
@@ -193,8 +194,9 @@ App.SellgameRoute = Ember.Route.extend({
                 data.nextPage = null;
             data.game = params.game;
             data.jsonURL = jsonURL;
+            console.log( data );
             return data;
         });
     }
 });
-*/
+

@@ -1,10 +1,10 @@
   <div class= 'item-container'>
 
-    {{#each item in itemsPage}}
-      <div {{bind-attr class=":item-holder key"}}>
-        <a {{bind-attr class=":idlol key"}}>
+    {{#each item in items}}
+      <div {{bind-attr class=":item-holder item.id"}}>
+        <a {{bind-attr class=":idlol item"}}>
           {{#if item}}
-            <img src="{{unbound item.image}}" class="item-image">
+            <img src="{{unbound item.imgURL}}" class="item-image">
              <!--img src="pic/ajax-loader.gif" alt="loading" class="loading-gif"-->
           {{/if}}
         </a>  

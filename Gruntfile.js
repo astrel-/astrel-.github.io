@@ -7,6 +7,7 @@ module.exports = function(grunt) {
     		files: {
     			"js/app.js": "js/coffee/app.coffee",
     			"js/login.js": "js/coffee/login.coffee",
+    			"js/parser.js": "js/coffee/parser.coffee",
     			"js/itemObject.js": "js/coffee/itemObject.coffee",
     		}
     	}

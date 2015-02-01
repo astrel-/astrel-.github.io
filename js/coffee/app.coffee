@@ -2,18 +2,18 @@ window.App = Ember.Application.create()
 
 App.Router.map( ->
 	#sidebar
-	this.resource( "steam" )
-	this.resource( "dota" )
-	this.resource( "cs-go" )
-	this.resource( "tf" )
+	@resource( "steam" )
+	@resource( "dota" )
+	@resource( "cs-go" )
+	@resource( "tf" )
 	#sell
-	this.resource( "sell", -> 
-		this.resource( "sellgame", 
+	@resource( "sell", -> 
+		@resource( "sellgame", 
 			path: "/:game/:page")
 		return
 		)
 	#nav
-	this.resource( "faq" )
-	this.resource( "about" )
+	@resource( "faq" )
+	@resource( "about" )
 	return
 )

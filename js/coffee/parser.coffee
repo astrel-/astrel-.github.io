@@ -9,6 +9,17 @@ App.parse = ( dataJSON ) ->
     data = 
         items: items
 
+App.sliceItems = ( items ) ->
+    page = 0
+    data = []
+    while (1)
+        itemsPage = items.slice( 20*page, 20* ( page+1 ) )
+        if itemsPage.length
+            data.push itemsPage
+        else 
+            break
+        page += 1
+    data
 
 ###
 function parse( dataJSON ) {

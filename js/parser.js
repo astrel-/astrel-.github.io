@@ -16,6 +16,22 @@
     };
   };
 
+  App.sliceItems = function(items) {
+    var data, itemsPage, page;
+    page = 0;
+    data = [];
+    while (1.) {
+      itemsPage = items.slice(20 * page, 20 * (page + 1));
+      if (itemsPage.length) {
+        data.push(itemsPage);
+      } else {
+        break;
+      }
+      page += 1;
+    }
+    return data;
+  };
+
   /*
   function parse( dataJSON ) {
   

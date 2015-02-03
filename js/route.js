@@ -1,31 +1,3 @@
-/*
-App.SellgameRoute = Ember.Route.extend(
-    model: ( params ) -> 
-        return $.getJSON( jsonURL ).then( ( dataJSON ) -> 
-            #var data = parse( dataJSON, currentPage );
-            $.extend( data, App.parse( dataJSON ) )
-            #console.log( data );
-            
-            data.itemsPage = data.items[data.currentPage-1];
-            if ( data.currentPage > 1 ) 
-                data.previousPage = data.currentPage - 1;
-            else 
-                data.previousPage = null;
-            if ( data.currentPage < data.pages ) 
-                data.nextPage = data.currentPage + 1;
-            else 
-                data.nextPage = null;
-               
-            data.game = params.game
-            data.jsonURL = jsonURL
-            console.log( data )
-            data
-            #return data;
-        )
-)
-*/
-
-
 (function() {
   App.SellRoute = Ember.Route.extend({
     model: function() {
@@ -40,7 +12,7 @@ App.SellgameRoute = Ember.Route.extend(
 
   App.SellgameRoute = Ember.Route.extend({
     model: function(params) {
-      var model;
+      var model, pageModel;
       if (params.game === "dota") {
         model = this.modelFor('sell').dota;
         if ($.isEmptyObject(model)) {
@@ -64,10 +36,10 @@ App.SellgameRoute = Ember.Route.extend(
         model.currentPage = parseInt(params.page);
         return $.getJSON(model.jsonURL).then(function(dataJSON) {
           var e, pageModel;
-          console.log("js");
           model.needsUpdate = false;
           model.items = App.sliceItems(App.parse(dataJSON).items);
           model.pages = model.items.length;
+          App.fillLastPage(model.items[model.pages - 1]);
           pageModel = {};
           try {
             pageModel.items = model.items[model.currentPage - 1];
@@ -79,7 +51,18 @@ App.SellgameRoute = Ember.Route.extend(
           return pageModel;
         });
       }
-      return model;
+      model.currentPage = parseInt(params.page);
+      pageModel = {};
+      pageModel.items = model.items[model.currentPage - 1];
+      pageModel.pages = model.pages;
+      pageModel.currentPage = model.currentPage;
+      if (pageModel.currentPage > 1) {
+        pageModel.previousPage = pageModel.currentPage - 1;
+      }
+      if (pageModel.currentPage < pageModel.pages) {
+        pageModel.nextPage = pageModel.currentPage + 1;
+      }
+      return pageModel;
     }
   });
 

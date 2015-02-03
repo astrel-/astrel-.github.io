@@ -32,6 +32,10 @@
     return data;
   };
 
+  App.fillLastPage = function(pageItem) {
+    return console.log(pageItem);
+  };
+
   /*
   function parse( dataJSON ) {
   

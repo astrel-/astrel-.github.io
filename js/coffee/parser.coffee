@@ -36,4 +36,4 @@ App.sliceItems = ( items ) ->
 App.fillLastPage = ( pageItem ) ->
     n = 20 - pageItem.length
     if n
-        pageItem.push.apply pageItem, [1..n].map () -> null 
+        pageItem.push.apply pageItem, [1..n].map () -> null

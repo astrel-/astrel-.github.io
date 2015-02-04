@@ -129,7 +129,7 @@
 
   App.SellitemRoute = Ember.Route.extend({
     model: function(params) {
-      var game, gamePicURL, item, itemModel, itemsPage, modelSell;
+      var game, gamePicURL, item, itemModel, modelSell;
       game = this.modelFor('sellgame').game;
       if (game === "dota") {
         modelSell = this.modelFor('sell').dota;
@@ -141,12 +141,12 @@
         modelSell = this.modelFor('sell').steam;
         gamePicURL = '/pic/games/steam.jpg';
       }
-      itemsPage = this.modelFor('sellgame').items;
       itemModel = ((function() {
-        var _i, _len, _results;
+        var _i, _len, _ref, _results;
+        _ref = modelSell.items[0];
         _results = [];
-        for (_i = 0, _len = itemsPage.length; _i < _len; _i++) {
-          item = itemsPage[_i];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          item = _ref[_i];
           if (item && item.classid === params.classid && item.instanceid === params.instanceid) {
             _results.push(item);
           }

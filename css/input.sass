@@ -164,7 +164,8 @@ footer
 	height: 1000px 
 
 nav
-	//text-align: center
+	text-align: center
+	overflow: auto
 	width: 100%
 	//overflow: auto
 	display: inline-block
@@ -174,14 +175,24 @@ nav
 		margin: 0
 		list-style-type: none
 		li
+			//width: 200px
 			display: inline
+			.active
+				border-style: solid
+				border-width: 1px
 
 .game-nav
 	margin: 0
-	width: 100px
-	//float: left
+	width: 203px
+	display: block
+	float: left
+	//text-decoration: none
+
+.game-nav:hover, .game-nav:visited, .game-nav:focus 
+	+no_link_decoration()
 
 .item-container 
+	margin-top: 2px
 	float: left
 	width: 515px
 	height: 450px
@@ -193,12 +204,10 @@ nav
 	width: 100px
 	float: left
 	padding-top: 0
-	margin: 1px
+	margin: 0px 2px 2px 0px
 	border-style: solid
 	border-width: 1px
 	border-color: black
-	cursor: pointer
-	//background-color: grey
 
 .loading-gif
 	width: 16px
@@ -213,11 +222,13 @@ nav
 	cursor: pointer
 
 .item-description 
+	margin-top: 2px
+	overflow: auto
 	float: left
 	padding: 5px
-	border-style: groove
+	border-style: solid
+	border-width: 1px
 	width: 275px
-	Aheight: 100%
 
 .game 
 	padding-top: 2px

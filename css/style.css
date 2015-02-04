@@ -136,6 +136,8 @@ footer {
   height: 1000px; }
 
 nav {
+  text-align: center;
+  overflow: auto;
   width: 100%;
   display: inline-block;
   clear: both; }
@@ -145,12 +147,22 @@ nav {
     list-style-type: none; }
     nav ul li {
       display: inline; }
+      nav ul li .active {
+        border-style: solid;
+        border-width: 1px; }
 
 .game-nav {
   margin: 0;
-  width: 100px; }
+  width: 203px;
+  display: block;
+  float: left; }
+
+.game-nav:hover, .game-nav:visited, .game-nav:focus {
+  color: black;
+  text-decoration: none; }
 
 .item-container {
+  margin-top: 2px;
   float: left;
   width: 515px;
   height: 450px; }
@@ -162,11 +174,10 @@ nav {
   width: 100px;
   float: left;
   padding-top: 0;
-  margin: 1px;
+  margin: 0px 2px 2px 0px;
   border-style: solid;
   border-width: 1px;
-  border-color: black;
-  cursor: pointer; }
+  border-color: black; }
 
 .loading-gif {
   width: 16px;
@@ -180,11 +191,13 @@ nav {
   cursor: pointer; }
 
 .item-description {
+  margin-top: 2px;
+  overflow: auto;
   float: left;
   padding: 5px;
-  border-style: groove;
-  width: 275px;
-  Aheight: 100%; }
+  border-style: solid;
+  border-width: 1px;
+  width: 275px; }
 
 .game {
   padding-top: 2px;

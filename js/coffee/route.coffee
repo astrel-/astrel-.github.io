@@ -127,8 +127,7 @@ App.SellitemRoute = Ember.Route.extend(
         else if game == "steam"
             modelSell = @modelFor( 'sell' ).steam
             gamePicURL = '/pic/games/steam.jpg'
-        itemsPage = @modelFor( 'sellgame' ).items
-        itemModel = ( item for item in itemsPage when item and 
+        itemModel = ( item for item in modelSell.items[0] when item and 
                 item.classid == params.classid and
                 item.instanceid == params.instanceid )[0]
         modelSell.currentItem = itemModel

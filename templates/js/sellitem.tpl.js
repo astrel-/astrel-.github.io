@@ -21,6 +21,6 @@ Ember.TEMPLATES["sellitem"] = Ember.Handlebars.template({"1":function(depth0,hel
   data.buffer.push("</span>\n\n  </div>\n  <div class=\"game\">\n  <span></span>\n  </div>\n  <div>\n  <span>\n    Tags: \n  </span>\n  </div>\n  <div class=\"sell-item\">\n");
   stack1 = helpers['if'].call(depth0, "tradable", {"name":"if","hash":{},"hashTypes":{},"hashContexts":{},"fn":this.program(1, data),"inverse":this.program(3, data),"types":["ID"],"contexts":[depth0],"data":data});
   if (stack1 != null) { data.buffer.push(stack1); }
-  data.buffer.push("  </div>\n</div>\n");
+  data.buffer.push("  </div>\n</div>\n\n\n");
   return buffer;
 },"useData":true});

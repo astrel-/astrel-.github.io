@@ -1,15 +1,17 @@
   <div class= 'item-container'>
 
     {{#each item in model.items}}
-      <div {{bind-attr class=":item-holder item.id"}}>
-        {{#link-to 'sellitem' item.classid item.instanceid class="idlol"}}
-          {{#if item}}
-            <img src="{{unbound item.imgURL}}" class="item-image">
-             <!--img src="pic/ajax-loader.gif" alt="loading" class="loading-gif"-->
-          {{/if}}
-        {{/link-to}}  
-      </div>
-    
+      {{#if item}}
+        <div {{bind-attr class=":item-holder item.id"}}>
+          {{#link-to 'sellitem' item.classid item.instanceid class="idlol"}}
+              <img src="{{unbound item.imgURL}}" class="item-image">
+               <!--img src="pic/ajax-loader.gif" alt="loading" class="loading-gif"-->
+          {{/link-to}}  
+        </div>
+      {{else}}
+        <div {{bind-attr class=":item-holder item.id"}}>
+        </div>
+      {{/if}}
     {{/each}}
 
     <div id="paging">

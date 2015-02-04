@@ -2,44 +2,31 @@
   <nav>
     <ul>
       <li>
-        {{#if dota.currentPage}}
+        <!--div class="game-nav-bar"-->
           {{#link-to 'sellgame' "dota" class="game-nav"}}
             <img src="pic/games/dota2.jpg" alt="Dota 2">
             <span>Dota 2</span>
           {{/link-to}}
-        {{else}}
-          {{#link-to 'sellgame' "dota" class="game-nav"}}
-          <img src="pic/games/dota2.jpg" alt="Dota 2">
-          <span>Dota 2</span>{{/link-to}}
-        {{/if}}
+        <!--/div-->
       </li>
       <li>
-        {{#if csgo.currentPage}}
+        <!--div class="game-nav-bar"-->
           {{#link-to 'sellgame' "cs-go" class="game-nav"}}
             <img src="pic/games/csgo.jpg" alt="CS:GO">
             <span>CS:GO</span> 
           {{/link-to}}
-        {{else}}
-          {{#link-to 'sellgame' "cs-go" class="game-nav"}}
-            <img src="pic/games/csgo.jpg" alt="CS:GO">
-            <span>CS:GO</span> 
-          {{/link-to}}  
-        {{/if}}
+        <!--/div-->
       </li>
       <li>
-        {{#if steam.currentPage}}
+        <!--div class="game-nav-bar"-->
           {{#link-to 'sellgame' "steam" class="game-nav"}}
             <img src="pic/games/steam.jpg" alt="Steam">
             <span>Steam</span>
           {{/link-to}}
-        {{else}}
-          {{#link-to 'sellgame' "steam" class="game-nav"}}
-            <img src="pic/games/steam.jpg" alt="Steam">
-            <span>Steam</span>
-          {{/link-to}}
-        {{/if}}
+        <!--/div-->
       </li>
-    </ul>  
+    </ul>
+
   </nav>  
 
   {{outlet}}

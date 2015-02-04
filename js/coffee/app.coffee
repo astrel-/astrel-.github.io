@@ -9,7 +9,11 @@ App.Router.map( ->
 	#sell
 	@resource( "sell", -> 
 		@resource( "sellgame", 
-			path: "/:game/:page")
+			path: "/:game",
+			() ->
+				@resource( "sellitem",
+					path: "/:classid/:instanceid")
+		)
 		return
 		)
 	#nav

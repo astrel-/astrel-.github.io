@@ -8,7 +8,11 @@
     this.resource("tf");
     this.resource("sell", function() {
       this.resource("sellgame", {
-        path: "/:game/:page"
+        path: "/:game"
+      }, function() {
+        return this.resource("sellitem", {
+          path: "/:classid/:instanceid"
+        });
       });
     });
     this.resource("faq");

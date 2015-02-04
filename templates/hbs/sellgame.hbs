@@ -1,25 +1,43 @@
   <div class= 'item-container'>
 
-    {{#each item in items}}
+    {{#each item in model.items}}
       <div {{bind-attr class=":item-holder item.id"}}>
-        <a {{bind-attr class=":idlol item"}}>
+        {{#link-to 'sellitem' item.classid item.instanceid class="idlol"}}
           {{#if item}}
             <img src="{{unbound item.imgURL}}" class="item-image">
              <!--img src="pic/ajax-loader.gif" alt="loading" class="loading-gif"-->
           {{/if}}
-        </a>  
+        {{/link-to}}  
       </div>
     
-
     {{/each}}
 
-    {{#link-to 'sellgame' game 1}}First{{/link-to}}
-    {{#link-to 'sellgame' game previousPage}}Previous{{/link-to}}
-    <span>Страница 
-    {{currentPage}}
-     из {{pages}}</span>
-    {{#link-to 'sellgame' game nextPage}}Next{{/link-to}}
-    {{#link-to 'sellgame' game pages}}Last{{/link-to}}
+    <div id="paging">
+      {{#if previousPage}}
+        {{!--#link-to 'sellgame' game 1}}<span>First</span>{{/link-to}}
+        {{#link-to 'sellgame' game previousPage}}<span>Previous</span>{{/link-to--}}
+        <button {{action 'showPage' game 1}}>First</button>
+        <button {{action 'showPage' game previousPage}}>Previous</button>
+      {{else}}
+        <span>First</span>
+        <span>Previous</span>
+      {{/if}}
+
+      <span>Страница {{currentPage}} из {{pages}}</span>
+
+      {{#if nextPage}}
+        {{!--#link-to 'sellgame' game nextPage}}<span>Next</span>{{/link-to}}
+        {{#link-to 'sellgame' game pages}}<span>Last</span>{{/link-to--}}
+        <button {{action 'showPage' game nextPage}}>Next</button>
+        <button {{action 'showPage' game pages}}>Last</button>
+      {{else}}
+        <span>Next</span>
+        <span>Last</span>
+      {{/if}}
+
+      <button {{action 'refreshList' game}}>Refresh</button>
+    </div>
+
 
 
 

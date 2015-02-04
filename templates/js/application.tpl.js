@@ -82,9 +82,9 @@ Ember.TEMPLATES["application"] = Ember.Handlebars.template({"1":function(depth0,
   },"hashTypes":{'class': "STRING"},"hashContexts":{'class': depth0},"fn":this.program(20, data),"inverse":this.noop,"types":["STRING"],"contexts":[depth0],"data":data}));
   if (stack1 != null) { data.buffer.push(stack1); }
   data.buffer.push("</li>\n        <li>");
-  stack1 = ((helpers['link-to'] || (depth0 && depth0['link-to']) || helperMissing).call(depth0, "sellgame", "dota", 1, {"name":"link-to","hash":{
+  stack1 = ((helpers['link-to'] || (depth0 && depth0['link-to']) || helperMissing).call(depth0, "sell", {"name":"link-to","hash":{
     'class': ("game-button")
-  },"hashTypes":{'class': "STRING"},"hashContexts":{'class': depth0},"fn":this.program(22, data),"inverse":this.noop,"types":["STRING","STRING","NUMBER"],"contexts":[depth0,depth0,depth0],"data":data}));
+  },"hashTypes":{'class': "STRING"},"hashContexts":{'class': depth0},"fn":this.program(22, data),"inverse":this.noop,"types":["STRING"],"contexts":[depth0],"data":data}));
   if (stack1 != null) { data.buffer.push(stack1); }
   data.buffer.push("</li>\n");
   stack1 = helpers['if'].call(depth0, "name", {"name":"if","hash":{},"hashTypes":{},"hashContexts":{},"fn":this.program(24, data),"inverse":this.noop,"types":["ID"],"contexts":[depth0],"data":data});

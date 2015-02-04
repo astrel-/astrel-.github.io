@@ -61,9 +61,9 @@ Ember.TEMPLATES["sellgame"] = Ember.Handlebars.template({"1":function(depth0,hel
   if (stack1 != null) { data.buffer.push(stack1); }
   data.buffer.push("\n      <button ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "refreshList", "game", {"name":"action","hash":{},"hashTypes":{},"hashContexts":{},"types":["STRING","ID"],"contexts":[depth0,depth0],"data":data})));
-  data.buffer.push(">Refresh</button>\n    </div>\n\n\n\n\n  </div>\n\n  <div class='item-description'>\n    ");
+  data.buffer.push(">Refresh</button>\n    </div>\n\n\n\n\n  </div>\n\n\n    ");
   stack1 = helpers._triageMustache.call(depth0, "outlet", {"name":"_triageMustache","hash":{},"hashTypes":{},"hashContexts":{},"types":["ID"],"contexts":[depth0],"data":data});
   if (stack1 != null) { data.buffer.push(stack1); }
-  data.buffer.push("\n  </div>");
+  data.buffer.push("\n");
   return buffer;
 },"useData":true});

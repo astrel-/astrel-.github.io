@@ -19,16 +19,19 @@ App.SellgameRoute = Ember.Route.extend(
             if $.isEmptyObject( model )
                 model.needsUpdate = true
                 model.jsonURL = "json/dota2.json"
+                model.game = "dota"
         else if params.game == "cs-go"
             model = @modelFor( 'sell' ).csgo
             if $.isEmptyObject( model )
                 model.needsUpdate = true
                 model.jsonURL = "json/csgo.json"
+                model.game = "cs-go"
         else if params.game == "steam"
             model = @modelFor( 'sell' ).steam
             if $.isEmptyObject( model )
                 model.needsUpdate = true
                 model.jsonURL = "json/steam.json"
+                model.game = "steam"
         if model.needsUpdate
             #Updating whole Sell Model
 
@@ -49,6 +52,8 @@ App.SellgameRoute = Ember.Route.extend(
                     console.log e
                 pageModel.game = params.game
                 pageModel.pages = model.items.length
+                pageModel.currentItem = pageModel.items[0]
+                model.currentItem = pageModel.currentItem
                 pageModel.currentPage = model.currentPage
                 pageModel.previousPage =  if pageModel.currentPage > 1 then pageModel.currentPage - 1 else null
                 pageModel.nextPage = if pageModel.currentPage < pageModel.pages then pageModel.nextPage = pageModel.currentPage + 1 else null
@@ -62,6 +67,7 @@ App.SellgameRoute = Ember.Route.extend(
         pageModel.game = params.game
         pageModel.pages = model.pages
         pageModel.currentPage = model.currentPage
+        pageModel.currentItem = model.currentItem
             #Setting pages
         pageModel.previousPage =  if pageModel.currentPage > 1 then pageModel.currentPage - 1 else null
         pageModel.nextPage = if pageModel.currentPage < pageModel.pages then pageModel.nextPage = pageModel.currentPage + 1 else null
@@ -88,28 +94,45 @@ App.SellgameRoute = Ember.Route.extend(
             model.currentPage = parseInt page
             @refresh()
             return
+        test: () ->
+            console.log "pressed"
 )
 
+
+App.SellgameIndexRoute = Ember.Route.extend
+    redirect: ( model ) ->
+        classid = model.currentItem.classid
+        instanceid = model.currentItem.instanceid
+        @transitionTo 'sellitem', classid, instanceid
+
+
+
 ###
-App.SellgameIndexRoute = Ember.Route.extend(
-    afterModel: ( model ) ->
-        firstItem = model.items[0]
-        classid = firstItem.itemid
-        itemid = firstItem.itemid
-        @transitionTo 'sellitem', classid, itemid
-)
+    redirect: ( model ) ->
+        classid = model.currentItem.classid
+        instanceid = model.currentItem.instanceid
+        console.log "redir"
+        @transitionTo 'sellitem', classid, instanceid 
 ###
 
 App.SellitemRoute = Ember.Route.extend(
     model: ( params ) ->
-        if params
-            itemsPage = @modelFor( 'sellgame' ).items
-            itemModel = ( item for item in itemsPage when item and 
-                    item.classid == params.classid and
-                    item.instanceid == params.instanceid )[0]
-            console.log "params"
-        else
-            console.log "noparams"
+        game = @modelFor('sellgame').game
+        if game == "dota"
+            modelSell = @modelFor( 'sell' ).dota
+            gamePicURL = '/pic/games/dota2.jpg'
+        else if game == "cs-go"
+            modelSell = @modelFor( 'sell' ).csgo
+            gamePicURL = '/pic/games/csgo.jpg'
+        else if game == "steam"
+            modelSell = @modelFor( 'sell' ).steam
+            gamePicURL = '/pic/games/steam.jpg'
+        itemsPage = @modelFor( 'sellgame' ).items
+        itemModel = ( item for item in itemsPage when item and 
+                item.classid == params.classid and
+                item.instanceid == params.instanceid )[0]
+        modelSell.currentItem = itemModel
+        itemModel.gamePicURL = gamePicURL
         itemModel
 )
 

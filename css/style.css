@@ -165,7 +165,8 @@ nav {
   margin: 1px;
   border-style: solid;
   border-width: 1px;
-  border-color: black; }
+  border-color: black;
+  cursor: pointer; }
 
 .loading-gif {
   width: 16px;
@@ -198,6 +199,9 @@ nav {
 #item-title p {
   padding-top: 6px;
   text-align: center; }
+
+.item-image-sell-item {
+  width: 256px; }
 
 #right_sidebar {
   float: left;

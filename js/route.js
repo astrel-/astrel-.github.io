@@ -24,18 +24,21 @@
         if ($.isEmptyObject(model)) {
           model.needsUpdate = true;
           model.jsonURL = "json/dota2.json";
+          model.game = "dota";
         }
       } else if (params.game === "cs-go") {
         model = this.modelFor('sell').csgo;
         if ($.isEmptyObject(model)) {
           model.needsUpdate = true;
           model.jsonURL = "json/csgo.json";
+          model.game = "cs-go";
         }
       } else if (params.game === "steam") {
         model = this.modelFor('sell').steam;
         if ($.isEmptyObject(model)) {
           model.needsUpdate = true;
           model.jsonURL = "json/steam.json";
+          model.game = "steam";
         }
       }
       if (model.needsUpdate) {
@@ -57,6 +60,8 @@
           }
           pageModel.game = params.game;
           pageModel.pages = model.items.length;
+          pageModel.currentItem = pageModel.items[0];
+          model.currentItem = pageModel.currentItem;
           pageModel.currentPage = model.currentPage;
           pageModel.previousPage = pageModel.currentPage > 1 ? pageModel.currentPage - 1 : null;
           pageModel.nextPage = pageModel.currentPage < pageModel.pages ? pageModel.nextPage = pageModel.currentPage + 1 : null;
@@ -68,6 +73,7 @@
       pageModel.game = params.game;
       pageModel.pages = model.pages;
       pageModel.currentPage = model.currentPage;
+      pageModel.currentItem = model.currentItem;
       pageModel.previousPage = pageModel.currentPage > 1 ? pageModel.currentPage - 1 : null;
       pageModel.nextPage = pageModel.currentPage < pageModel.pages ? pageModel.nextPage = pageModel.currentPage + 1 : null;
       return pageModel;
@@ -96,41 +102,59 @@
         }
         model.currentPage = parseInt(page);
         this.refresh();
+      },
+      test: function() {
+        return console.log("pressed");
       }
     }
   });
 
+  App.SellgameIndexRoute = Ember.Route.extend({
+    redirect: function(model) {
+      var classid, instanceid;
+      classid = model.currentItem.classid;
+      instanceid = model.currentItem.instanceid;
+      return this.transitionTo('sellitem', classid, instanceid);
+    }
+  });
+
   /*
-  App.SellgameIndexRoute = Ember.Route.extend(
-      afterModel: ( model ) ->
-          firstItem = model.items[0]
-          classid = firstItem.itemid
-          itemid = firstItem.itemid
-          @transitionTo 'sellitem', classid, itemid
-  )
+      redirect: ( model ) ->
+          classid = model.currentItem.classid
+          instanceid = model.currentItem.instanceid
+          console.log "redir"
+          @transitionTo 'sellitem', classid, instanceid
   */
 
 
   App.SellitemRoute = Ember.Route.extend({
     model: function(params) {
-      var item, itemModel, itemsPage;
-      if (params) {
-        itemsPage = this.modelFor('sellgame').items;
-        itemModel = ((function() {
-          var _i, _len, _results;
-          _results = [];
-          for (_i = 0, _len = itemsPage.length; _i < _len; _i++) {
-            item = itemsPage[_i];
-            if (item && item.classid === params.classid && item.instanceid === params.instanceid) {
-              _results.push(item);
-            }
-          }
-          return _results;
-        })())[0];
-        console.log("params");
-      } else {
-        console.log("noparams");
+      var game, gamePicURL, item, itemModel, itemsPage, modelSell;
+      game = this.modelFor('sellgame').game;
+      if (game === "dota") {
+        modelSell = this.modelFor('sell').dota;
+        gamePicURL = '/pic/games/dota2.jpg';
+      } else if (game === "cs-go") {
+        modelSell = this.modelFor('sell').csgo;
+        gamePicURL = '/pic/games/csgo.jpg';
+      } else if (game === "steam") {
+        modelSell = this.modelFor('sell').steam;
+        gamePicURL = '/pic/games/steam.jpg';
       }
+      itemsPage = this.modelFor('sellgame').items;
+      itemModel = ((function() {
+        var _i, _len, _results;
+        _results = [];
+        for (_i = 0, _len = itemsPage.length; _i < _len; _i++) {
+          item = itemsPage[_i];
+          if (item && item.classid === params.classid && item.instanceid === params.instanceid) {
+            _results.push(item);
+          }
+        }
+        return _results;
+      })())[0];
+      modelSell.currentItem = itemModel;
+      itemModel.gamePicURL = gamePicURL;
       return itemModel;
     }
   });

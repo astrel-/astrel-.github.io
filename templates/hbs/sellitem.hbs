@@ -1,31 +1,29 @@
+<div class='item-description'>
+  <img {{bind-attr src = imgURL}} class="item-image-sell-item">
+  <div>
+    <p>{{marketName}}</p>
+  </div>
+  <div class="game">
+    <img {{bind-attr src = gamePicURL}}>
+    <span>{{type}}</span>
 
-<img {{bind-attr src=imgURL}}>
-<div>
-  <p>{{marketName}}</p>
+  </div>
+  <div class="game">
+  <span>{{!--descriptions--}}</span>
+  </div>
+  <div>
+  <span>
+    Tags: {{!--tags--}}
+  </span>
+  </div>
+  <div class="sell-item">
+  {{#if tradable}}
+    <button>Sell</button>
+  {{else}}
+     <span>Вы не можете обмениваться этим предметом</span>
+  {{/if}}
+  </div>
 </div>
-<div class="game">
-  {{!--game--}}
-  <img src="/pic/games/dota2.jpg">
-  <span>{{type}}</span>
-
-</div>
-<div class="game">
-<span>{{!--descriptions--}}</span>
-</div>
-<div>
-<span>
-  Tags: {{!--tags--}}
-</span>
-</div>
-<div class="sell-item">
-{{#if tradable}}
-  <button>Sell</button>
-{{else}}
-   <span>Вы не можете обмениваться этим предметом</span>
-{{/if}}
-</div>
-
-
 {{!--
 App.Item = Ember.Object.extend(
     id: null

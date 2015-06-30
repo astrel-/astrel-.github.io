@@ -3,7 +3,7 @@ App.ApplicationController = Ember.Controller.extend
 	team2: "Alliance"
 	coef1: 1.5
 	coef2: 1.5
-	money: 0
+	money: 10
 	r: (->
 		prob1 = 1/1.5
 		prob2 = 1/1.5

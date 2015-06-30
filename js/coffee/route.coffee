@@ -6,5 +6,3 @@ App.ApplicationRoute = Ember.Route.extend
             total: 0
             needtoPay1: 0
             needtoPay2: 0
-
-

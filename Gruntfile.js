@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     	compile: {
     		files: {
     			"js/app.js": "js/coffee/app.coffee",
-    			"js/login.js": "js/coffee/login.coffee",
+    			"js/appController.js": "js/coffee/appController.coffee",
     			"js/route.js": "js/coffee/route.coffee",
     			"js/parser.js": "js/coffee/parser.coffee",
     			"js/itemObject.js": "js/coffee/itemObject.coffee",
@@ -66,8 +66,8 @@ module.exports = function(grunt) {
 		}
 	}
   });
-  
- 
+
+
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-ember-templates');
@@ -78,5 +78,5 @@ module.exports = function(grunt) {
   // Default task(s).
   grunt.registerTask('default', ["watch"]);
   //grunt.registerTask('coffee', ["coffee"]);
- 
+
 };

@@ -1,88 +1,136 @@
-<div id="debug">
-  {{#if name}}
-  <button {{action 'logOut'}}>Log Out</button>
-  {{else}}
-  <button {{action 'logIn'}}>Log In</button>
-  {{/if}}
+<div id="main">
+<p>Betards!</p>
+
+<nav>
+  <div id="comm">
+    Комиссия <br>
+    {{input value=r}}% <button {{action 'go'}}>Go</button>
+  </div>
+
+  <div id="odds">
+    Отношение коэф <br>
+      {{input value=ratio}} <button {{action 'changeRatio'}}>Change</button>
+  </div>
+
+</nav>
+
+<table>
+  <tbody>
+    <tr>
+      <th> Event Name </th>
+      <th> <span class="number">1</span> </th>
+      <th> <span class="number">2</span> </th>
+    </tr>
+
+    <tr>
+
+      <td>
+        <div>
+          <span class="number">1.</span> {{team1}}
+        </div>
+        <div>
+          <span class="number">2.</span> {{team2}}
+        </div>
+      </td>
+
+      <td>{{coef1}}</t>
+
+      <td>{{coef2}}</td>
+
+    </tr>
+  </tbody>
+
+</table>
+
+
+
+<div id="bet">
+Поставить
+{{input value=money}}$ на
 </div>
 
-<div id="main-menu-container">
-  <header>
-    {{#link-to 'application' class="title"}}
-      <div id="title">
-        <h2>YBARRA</h2>
+<div id="team1">
+<a href="#" {{action 'bet' 1}}>{{team1}}</a>
+  <div class="wrapper">
+
+    <div class="table2">
+
+      <div class="row header">
+        <div class="cell">
+          Money
+        </div>
+        <div class="cell">
+          Coeff
+        </div>
       </div>
-      {{/link-to}}
 
-  </header>
-
-  <div id="login" class>
-  
-  {{#if name}}
-    <div id='userbar'>
-      <a href>{{name}}</a> {{money}} <a href><span><font size=1>(выход)</font></span></a>
+      {{#each bet in model.team1}}
+      <div class="row">
+        <div class="cell">
+          {{bet.money}}
+        </div>
+        <div class="cell">
+          {{bet.coef}}
+        </div>
+      </div>
+      {{/each}}
     </div>
-  {{else}}
-    <div id="faq">
-      {{#link-to 'faq'}}
-        <span>FAQ</span>
-      {{/link-to}}
-      </a>
-    </div>
-    <div id="about">
-      {{#link-to 'about'}}
-        <span>О проекте</span>
-      {{/link-to}}
-    </div>
-    <div id="steam-log-in">
-      <a href="html/index_en.html"><img src="pic/sits_small.png"></a>
-    </div>
-{{/if}}
   </div>
-
-  <div id="container">
-
-    <div id="left-sidebar">
-      <ul>
-        <li>{{#link-to 'steam' class="game-button"}}
-          <img src="pic/games/steam.jpg" alt="Steam">
-          <span>Steam Games</span>{{/link-to}}</li>
-        <li>{{#link-to 'dota' class="game-button"}}
-          <img src="pic/games/dota2.jpg" alt="Dota 2">
-          <span>Dota 2</span>{{/link-to}}</li>
-        <li>{{#link-to 'cs-go' class="game-button"}}
-          <img src="pic/games/csgo.jpg" alt="CS:GO">
-          <span>CS:GO</span>{{/link-to}}</li>
-        <li>{{#link-to 'tf' class="game-button"}}
-          <img src="pic/games/tf2.jpg" alt="Team Fortress 2">
-          <span>Team Fortress</span>{{/link-to}}</li>
-        <li>{{#link-to 'sell' class="game-button"}}
-          <img src="pic/games/tf2.jpg" alt="Продать вещи">
-          <span>Продать</span>{{/link-to}}</li>
-          {{#if name}}
-        <li>
-          <div id="my-profile">
-            <a href="#/my" id="profile">
-              <img src="pic/av.jpg" width="32" alt="Личный кабинет">
-              <span>Личный кабинет</span>
-            </a>
-          </div>
-        </li>
-        {{/if}}
-      </ul>      
-    </div>
-
-  <div id="main">
-
-{{outlet}}
-  </div>
-
-  </div>
-
-  <!--footer>
-    <div id="rules">
-      <a href="" class="rules">Правила Пользования</a>
-    </div>
-  </footer-->
 </div>
 
+<div id="team2">
+<a href="#" {{action 'bet' 2}}>{{team2}}</a>
+  <div class="wrapper">
+
+    <div class="table2">
+
+      <div class="row header blue">
+        <div class="cell">
+          Money
+        </div>
+        <div class="cell">
+          Coeff
+        </div>
+      </div>
+
+      {{#each bet in model.team2}}
+      <div class="row">
+        <div class="cell">
+          {{bet.money}}
+        </div>
+        <div class="cell">
+          {{bet.coef}}
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+
+<div id="total">
+Расчеты
+<table>
+  <tbody>
+    <tr>
+      <th> Взято денег </th>
+      <th> К выплате, если {{team1}} победит </th>
+      <th> К выплате, если {{team2}} победит </th>
+    </tr>
+
+    <tr>
+
+      <td>
+        {{model.total}}
+      </td>
+
+      <td>{{model.needtoPay1}}</td>
+
+      <td>{{model.needtoPay2}}</td>
+
+    </tr>
+  </tbody>
+
+</table>
+</div>
+</div>

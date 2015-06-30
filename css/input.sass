@@ -1,283 +1,118 @@
-/*DEBUGGING*/
-#debug
-	position: absolute
-	right: 5px
-	top: 0px
-	opacity: .3
-	float: right
-	span
-		float: right
-/*DEBUGGING*/
+*
+  font-family: tahoma, arial, verdana, sans-serif, Lucida Sans
+  //font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+  //font-weight: 300
 
-#main-menu-container 
-	margin-left: auto
-	margin-right: auto
-	padding-left: auto
-	padding-right: auto
-	//height: 5000px
-	width: 1000px
-	border-style: none dashed none dashed
-	border-width: 1px
+input[type=text], textarea
+  -webkit-transition: all 0.30s ease-in-out
+  -moz-transition: all 0.30s ease-in-out
+  -ms-transition: all 0.30s ease-in-out
+  -o-transition: all 0.30s ease-in-out
+  outline: none
+  padding: 3px 0px 3px 3px
+  margin: 5px 1px 3px 0px
+  border: 1px solid #DDDDDD
+  width: 40px
 
-#login 
-	background: white
-	border-style: dashed none dashed none
-	border-width: 1px
-	//text-align: center
-	display: inline-block
-	width: 998px
-	height: 25px
-	
-	span
-		padding-right: 10px
-
-#faq
-	width: 100px
-	text-align: center
-	float: left
-
-#about
-	@extend #faq
-
-
-.f-nav
-	z-index: 9999
-	position: fixed
-	top: 0
-	width: 100%
-
-header 
-	text-align: center
-	h2
-		margin: 0px
-		font: 400 100px/1.3 'Berkshire Swash', Helvetica, sans-serif
-		color: black
-
-.title, .title:hover, .title:visited, .title:focus 
-	color: black
-	text-decoration: none
-
-
-#steam-log-in 
-	float: right
-	padding-right: 2px
-
-#userbar 
-	float: left
-	padding-left: 4px
-
-
-#container 
-	border-style: none none dashed none
-	border-width: 1px
-	height: 5000px
-	width: 100%
-
-
-=width($width)
-	width: $width
-
-#left-sidebar 
-	+width(200px)
-	float: left
-	height: 100%
-	border-style: none dashed none none
-	border-width: 1px
-	ul
-		margin: 0
-		padding: 5px
-		text-align: left
-		list-style-type: none
-		li
-			.active
-				border-style: solid
-				border-width: 1px
-		li:hover 
-			border-style: solid
-			border-width: 1px
-	span 
-		padding-left: 5px
-
-#left-sidebar:before 
-	+width(200px)
-	content: ''
-	position: relative
-	top: 0
-	bottom: 0
-	z-index: -1
-	left: 0
-
-
-.game-button 
-	padding-top: 5px
-	padding-bottom: 5px
-	padding-left: 5px
-	display: block
-	cursor: pointer
-	text-decoration: none
-	color: black
-	font-weight: solid
-
-
-=no_link_decoration()
-	color: black
-	text-decoration: none
-
-.game-button:hover, .game-button:visited, .game-button:focus 
-	+no_link_decoration()
-
-#profile
-	@extend .game-button
+input[type=text]:focus, textarea:focus
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1)
+  padding: 3px 0px 3px 3px
+  margin: 5px 1px 3px 0px
+  border: 1px solid rgba(81, 203, 238, 1)
 
 #main
-	float: left
+  margin: auto
+  width: 960px
 
-#main:before 
-	content: ''
-	position: relative
-	top: 0
-	bottom: 0
-	z-index: -1
-	left: 200px
+p
+  text-align: center
+  font-size: 28px
 
-footer 
-	width: 1001px
-	color: black
-	text-align: center
+table
+  margin-top: 20px
+  margin: auto
+  font-family: sans-serif
+  -webkit-font-smoothing: antialiased
+  font-size: 115%
+  overflow: auto
+  width: auto
+  th
+    background-color: rgb(112, 196, 105)
+    color: white
+    font-weight: normal
+    padding: 20px 30px
+    text-align: center
+  td
+    background-color: rgb(238, 238, 238)
+    color: rgb(111, 111, 111)
+    padding: 20px 30px
 
+.wrapper
+  margin: 0 auto
+  padding: 10px 40px 10px 40px
+  max-width: 480px
 
-.rules, .rules:hover, .rules:visited, .rules:focus 
-	+no_link_decoration
+.table2
+  margin: 0 0 40px 0
+  width: 100%
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2)
+  display: table
+  @media screen and (max-width: 100px)
+    display: block
 
+.row
+  display: table-row
+  background: #f6f6f6
+  &:nth-of-type(odd)
+    background: #e9e9e9
+  &.header
+    font-weight: 900
+    color: #ffffff
+    background: #ea6153
+  &.green
+    background: #27ae60
+  &.blue
+    background: #2980b9
+  @media screen and (max-width: 100px)
+    padding: 8px 0
+    display: block
 
-/*******/
+.cell
+  padding: 6px 12px
+  display: table-cell
+  @media screen and (max-width: 100px)
+    padding: 2px 12px
+    display: block
 
-
-
-
-
-.inventory-main 
-	padding-left: 3px
-	float: left
-	text-align: center
-	width: 798px
-	height: 1000px 
 
 nav
-	text-align: center
-	overflow: auto
-	width: 100%
-	//overflow: auto
-	display: inline-block
-	clear: both
-	ul
-		padding: 0
-		margin: 0
-		list-style-type: none
-		li
-			//width: 200px
-			display: inline
-			.active
-				border-style: solid
-				border-width: 1px
+  width: 100%
+  margin: auto
+  text-align: center
 
-.game-nav
-	margin: 0
-	width: 203px
-	display: block
-	float: left
-	//text-decoration: none
+#odds
+  display: inline-block
+  margin-left: 200px
 
-.game-nav:hover, .game-nav:visited, .game-nav:focus 
-	+no_link_decoration()
+#comm
+  display: inline-block
 
-.item-container 
-	margin-top: 2px
-	float: left
-	width: 515px
-	height: 450px
+.number
+  font-weight: bold
 
-.item-holder 
-	text-align: center
-	line-height: 98px
-	height: 100px
-	width: 100px
-	float: left
-	padding-top: 0
-	margin: 0px 2px 2px 0px
-	border-style: solid
-	border-width: 1px
-	border-color: black
+#team1
+  width: 480px
+  display: table-cell
+  vertical-align: top
+  text-align: center
 
-.loading-gif
-	width: 16px
-	vertical-align: middle
+#team2
+  width: 480px
+  display: table-cell
+  vertical-align: top
+  text-align: center
 
-.item-image
-	width: 98px
-
-
-.idlol 
-	display: block
-	cursor: pointer
-
-.item-description 
-	margin-top: 2px
-	overflow: auto
-	float: left
-	padding: 5px
-	border-style: solid
-	border-width: 1px
-	width: 275px
-
-.game 
-	padding-top: 2px
-	padding-bottom: 4px
-	border-style: none none solid none
-	border-width: 1px
-
-.sell-item 
-	padding-top: 4px
-	text-align: center
-
-#item-title p
-	padding-top: 6px
-	text-align: center
-
-.item-image-sell-item
-	width: 256px
-
-
-
-#right_sidebar 
-	float: left
-	width: 200px
-
-#steam2 
-	width: 154px
-	float: right
-
-#user_bar 
-	float: left
-	padding-top: 5px
-	ul
-		list-style-type: none
-
-#user 
-	float: left
-	width: 200px
-
-#user_pic 
-	float: left
-	width: 50px
-	margin-right: 10px
-
-#user_name 
-	float: left
-	width: 140px
-
-
-#test 
-	text-align: right
-	padding-right: 5px
+#total
+  border-width: 2px 0 0 0
+  border-style: solid
 

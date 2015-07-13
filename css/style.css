@@ -1,4 +1,25 @@
 * {
   font-family: tahoma, arial, verdana, sans-serif, Lucida Sans; }
 
+#ybarra {
+  display: inline-block; }
+
+#site {
+  display: inline-block;
+  float: right; }
+
+#motto {
+  text-align: center;
+  margin-top: 200px;
+  margin-bottom: 200px; }
+
+#motto-list {
+  text-align: center; }
+  #motto-list ul {
+    list-style-type: none; }
+    #motto-list ul li {
+      display: inline-block;
+      padding-left: 50px;
+      padding-right: 50px; }
+
 /*# sourceMappingURL=style.css.map */

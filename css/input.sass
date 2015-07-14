@@ -9,6 +9,8 @@
   background: url('/pic/gaming-296528.jpg')
   color: white
   text-shadow: 1px 1px 1px rgba(0,0,0,0.3)
+  .row
+    font-size: 125%
 
 #ybarra
   display: inline-block
@@ -20,19 +22,33 @@
 #motto
   text-align: center
   font-size: 300%
-  margin-top: 200px
-  margin-bottom: 200px
 
 .row
   text-align: center
 
-.vcenter
-  display: inline-block
-  vertical-align: middle
-  float: none
-
 .half-page
   height: 50vh
+  .img-container:before
+    content: ' '
+    display: inline-block
+    vertical-align: middle
+    height: 50vh
+  .text-container
+  line-height: 50vh
+  h2
+    vertical-align: middle
+    display: inline-block
+
+
+
+.img-container
+  font: 0/0 a
+
+
+.img-container img
+  vertical-align: middle
+  display: inline-block
+
 
 .page
   height: 100vh
@@ -40,11 +56,5 @@
     display: inline-block
     margin: auto
 
-.descr
-  p
-    font-size: 300%
-  span
-
-
-
-
+#about-us
+  text-align: center
